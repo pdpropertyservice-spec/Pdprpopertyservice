@@ -2,17 +2,32 @@ import { useState, type FormEvent } from "react";
 import { IconPhone, IconMail, IconPin, IconCheck, IconArrow } from "./Icons";
 
 export function CTA() {
-  const [sent, setSent] = useState(false);
+  const [status, setStatus] = useState<"idle" | "submitting" | "success">("idle");
   const [form, setForm] = useState({ name: "", contact: "", service: "Pressure Washing", message: "" });
 
-  const onSubmit = (e: FormEvent) => {
+  const onSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    const subject = encodeURIComponent(`Quote request — ${form.service}`);
-    const body = encodeURIComponent(
-      `Name: ${form.name}\nContact: ${form.contact}\nService: ${form.service}\n\n${form.message}`
-    );
-    window.location.href = `mailto:pdpropertyservice@gmail.com?subject=${subject}&body=${body}`;
-    setSent(true);
+    
+    const FORMSPREE_ID = "xjgddlaw";
+
+    setStatus("submitting");
+    try {
+      await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          subject: `Website Lead: ${form.service}`,
+          name: form.name,
+          contact: form.contact,
+          service: form.service,
+          message: form.message
+        }),
+      });
+      setStatus("success");
+    } catch (err) {
+      alert("Something went wrong. Please try calling or emailing us directly.");
+      setStatus("idle");
+    }
   };
 
   return (
@@ -57,16 +72,14 @@ export function CTA() {
 
             {/* Right: form */}
             <div className="relative border-t border-white/10 bg-white/[0.02] p-8 sm:p-12 lg:border-l lg:border-t-0">
-              {sent ? (
+              {status === "success" ? (
                 <div className="flex h-full flex-col items-center justify-center text-center">
                   <div className="flex h-16 w-16 items-center justify-center rounded-full bg-forest-500/20 text-forest-300">
                     <IconCheck className="h-8 w-8" />
                   </div>
-                  <h3 className="mt-5 text-2xl font-bold text-white">Almost there!</h3>
+                  <h3 className="mt-5 text-2xl font-bold text-white">Request Sent!</h3>
                   <p className="mt-2 max-w-sm text-silver-300">
-                    Your email app should be opening with your request ready to send.
-                    Prefer to call? Reach Michael directly at{" "}
-                    <a href="tel:+16077598829" className="font-semibold text-forest-300">(607) 759-8829</a>.
+                    Thanks for reaching out, {form.name}. Michael will review your details and get back to you shortly.
                   </p>
                 </div>
               ) : (
@@ -114,9 +127,10 @@ export function CTA() {
                   </div>
                   <button
                     type="submit"
-                    className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-br from-forest-400 to-forest-700 px-6 py-3.5 text-base font-semibold text-white shadow-lg shadow-forest-900/40 transition-transform hover:scale-[1.02]"
+                    disabled={status === "submitting"}
+                    className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-br from-forest-400 to-forest-700 px-6 py-3.5 text-base font-semibold text-white shadow-lg shadow-forest-900/40 transition-transform hover:scale-[1.02] disabled:opacity-50 disabled:hover:scale-100"
                   >
-                    Send my request
+                    {status === "submitting" ? "Sending..." : "Send my request"}
                     <IconArrow className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                   </button>
                   <p className="text-center text-xs text-silver-500">No spam, ever. We only use your info to send your quote.</p>

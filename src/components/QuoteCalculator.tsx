@@ -39,6 +39,12 @@ export function QuoteCalculator() {
   const [roofEnabled, setRoofEnabled] = useState(false);
   const [gutterEnabled, setGutterEnabled] = useState(false);
 
+  // Formspree Lead Capture State
+  const [customerName, setCustomerName] = useState("");
+  const [customerContact, setCustomerContact] = useState("");
+  const [customerAddress, setCustomerAddress] = useState("");
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "submitting" | "success">("idle");
+
   const toggleService = (id: string) => {
     setSelectedServices((prev) =>
       prev.includes(id) ? prev.filter((s) => s !== id) : [...prev, id]
@@ -91,13 +97,34 @@ export function QuoteCalculator() {
     return { lineItems, subtotal, discount, propBase, accessMod, low, high };
   }, [propertyType, buildup, access, selectedServices, houseSqft, drivewayCars, deckL, deckW, binCount, roofEnabled, gutterEnabled]);
 
-  const handleBook = () => {
+  const handleBook = async () => {
+    const FORMSPREE_ID = "xjgddlaw";
+
+    setSubmitStatus("submitting");
     const lines = estimate.lineItems.map((item) => `- ${item.label} (${item.desc}): $${item.price}`).join("\n");
-    const subject = encodeURIComponent("Confirmed Estimate Request");
-    const body = encodeURIComponent(
-      `I'd like to book/confirm this estimate:\n\nProperty: ${propertyType}\nCondition: ${buildup}\n\nServices:\n${lines}\n\nTotal Estimate: $${estimate.low} - $${estimate.high}\n\nName:\nPhone:\nAddress:`
-    );
-    window.location.href = `mailto:pdpropertyservice@gmail.com?subject=${subject}&body=${body}`;
+
+    try {
+      await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          subject: "New Calculator Estimate Request",
+          name: customerName,
+          contact: customerContact,
+          address: customerAddress,
+          propertyType,
+          condition: buildup,
+          access,
+          services: lines,
+          subtotal: `$${estimate.subtotal}`,
+          estimatedTotal: `$${estimate.low} - $${estimate.high}`,
+        }),
+      });
+      setSubmitStatus("success");
+    } catch (err) {
+      alert("Error sending request. Please call us directly.");
+      setSubmitStatus("idle");
+    }
   };
 
   return (
@@ -247,7 +274,48 @@ export function QuoteCalculator() {
                 <span className="text-xs font-bold uppercase tracking-wider text-silver-500">Estimated Range</span>
                 <div className="mt-1 silver-text text-4xl font-black">${estimate.low} - ${estimate.high}</div>
               </div>
-              <button onClick={handleBook} disabled={estimate.lineItems.length === 0} className="mt-6 w-full rounded-xl bg-forest-500 py-4 font-bold text-white transition-all hover:bg-forest-600 disabled:opacity-50">Request This Package</button>
+              {submitStatus === "success" ? (
+                <div className="mt-6 rounded-xl border border-forest-400/30 bg-forest-500/20 p-5 text-center shadow-lg">
+                  <IconCheck className="mx-auto mb-2 h-8 w-8 text-forest-400" />
+                  <h4 className="text-lg font-bold text-white">Quote Request Sent!</h4>
+                  <p className="mt-1 text-sm text-silver-300">Michael will review your details and contact you shortly.</p>
+                </div>
+              ) : (
+                <div className="mt-6 space-y-3">
+                  <input
+                    type="text"
+                    required
+                    placeholder="Your Name"
+                    value={customerName}
+                    onChange={(e) => setCustomerName(e.target.value)}
+                    className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-silver-500 outline-none transition-colors focus:border-forest-400/60 focus:bg-white/[0.07]"
+                  />
+                  <input
+                    type="text"
+                    required
+                    placeholder="Phone or Email"
+                    value={customerContact}
+                    onChange={(e) => setCustomerContact(e.target.value)}
+                    className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-silver-500 outline-none transition-colors focus:border-forest-400/60 focus:bg-white/[0.07]"
+                  />
+                  <input
+                    type="text"
+                    required
+                    placeholder="Property Address"
+                    value={customerAddress}
+                    onChange={(e) => setCustomerAddress(e.target.value)}
+                    className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-silver-500 outline-none transition-colors focus:border-forest-400/60 focus:bg-white/[0.07]"
+                  />
+                  <button
+                    onClick={handleBook}
+                    disabled={estimate.lineItems.length === 0 || !customerName || !customerContact || submitStatus === "submitting"}
+                    className="w-full rounded-xl bg-forest-500 py-4 font-bold text-white transition-all hover:bg-forest-600 disabled:opacity-50 disabled:grayscale"
+                  >
+                    {submitStatus === "submitting" ? "Sending..." : "Request This Package"}
+                  </button>
+                  <p className="text-center text-xs text-silver-500 mt-2">No commitment. Fast follow-up.</p>
+                </div>
+              )}
             </div>
           </div>
         </div>
