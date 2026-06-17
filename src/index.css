@@ -1,0 +1,166 @@
+@import "tailwindcss";
+
+@theme {
+  --color-forest-50: #effaf1;
+  --color-forest-100: #d8f0dd;
+  --color-forest-200: #b3e1bf;
+  --color-forest-300: #82ca97;
+  --color-forest-400: #4fac6c;
+  --color-forest-500: #2f8f4e;
+  --color-forest-600: #21733d;
+  --color-forest-700: #1c5c33;
+  --color-forest-800: #18482b;
+  --color-forest-900: #143b25;
+  --color-forest-950: #0a2114;
+
+
+  --color-silver-100: #f4f6f7;
+  --color-silver-200: #e3e8ea;
+  --color-silver-300: #c8d1d4;
+  --color-silver-400: #a3afb4;
+  --color-silver-500: #7e8c92;
+
+  --color-ink-900: #0a0f0c;
+  --color-ink-950: #060907;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --animate-float: float 7s ease-in-out infinite;
+  --animate-float-slow: float 11s ease-in-out infinite;
+  --animate-pulse-ring: pulseRing 2.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-shimmer: shimmer 3.5s linear infinite;
+  --animate-drift: drift 18s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-18px); }
+}
+
+@keyframes pulseRing {
+  0% { transform: scale(0.95); opacity: 0.7; }
+  70% { transform: scale(1.5); opacity: 0; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes drift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(40px, -30px) scale(1.08); }
+  66% { transform: translate(-30px, 20px) scale(0.95); }
+}
+
+.slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+}
+.slider-thumb::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--color-forest-400);
+  cursor: pointer;
+  border: 3px solid #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  transition: transform 0.1s;
+}
+.slider-thumb::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
+.slider-thumb::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--color-forest-400);
+  cursor: pointer;
+  border: 3px solid #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  transition: transform 0.1s;
+}
+.slider-thumb::-moz-range-thumb:hover {
+  transform: scale(1.15);
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background-color: var(--color-ink-950);
+  color: var(--color-silver-200);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.silver-text {
+  background: linear-gradient(135deg, #ffffff 0%, #c8d1d4 38%, #7e8c92 60%, #e3e8ea 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.silver-sheen {
+  background: linear-gradient(100deg, #e3e8ea 0%, #ffffff 20%, #a3afb4 40%, #ffffff 60%, #c8d1d4 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: var(--animate-shimmer);
+}
+
+.glass {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-strong {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.03));
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.grain {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 4px 4px;
+}
+
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #060907; }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#21733d, #18482b);
+  border-radius: 99px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+}
