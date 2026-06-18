@@ -52,7 +52,12 @@ export function Footer() {
             <ul className="mt-4 space-y-3">
               <li>
                 <a href="tel:+16077598829" className="flex items-center gap-2.5 text-sm text-silver-300 hover:text-forest-300">
-                  <IconPhone className="h-4 w-4 text-forest-400" /> (607) 759-8829
+                  <IconPhone className="h-4 w-4 text-forest-400" /> Michael: (607) 759-8829
+                </a>
+              </li>
+              <li>
+                <a href="tel:+16073405957" className="flex items-center gap-2.5 text-sm text-silver-300 hover:text-forest-300">
+                  <IconPhone className="h-4 w-4 text-forest-400" /> Takota: (607) 340-5957
                 </a>
               </li>
               <li>
@@ -64,7 +69,7 @@ export function Footer() {
                 <IconPin className="h-4 w-4 text-forest-400" /> Broome County, NY
               </li>
             </ul>
-            <p className="mt-4 text-sm text-silver-400">Owner / Operator: <span className="font-semibold text-white">Michael Pavlisak</span></p>
+            <p className="mt-4 text-sm text-silver-400">Owners: <span className="font-semibold text-white">Michael Pavlisak & Takota Dunlap</span></p>
           </div>
         </div>
 

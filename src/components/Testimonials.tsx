@@ -4,7 +4,7 @@ import { IconStar } from "./Icons";
 const REVIEWS = [
   {
     quote:
-      "Our driveway looked brand new—I genuinely couldn't believe it was the same concrete. Michael was on time, professional, and the price was fair. Booking again for the deck.",
+      "Our driveway looked brand new—I genuinely couldn't believe it was the same concrete. The team was on time, professional, and the price was fair. Booking again for the deck.",
     name: "Sarah K.",
     place: "Vestal, NY",
   },
@@ -22,7 +22,7 @@ const REVIEWS = [
   },
   {
     quote:
-      "Michael cleaned up our driveway and front walk better than we expected. Fair price, easy communication, and everything looked noticeably brighter when he finished.",
+      "The PD Property Services team cleaned up our driveway and front walk better than we expected. Fair price, easy communication, and everything looked noticeably brighter when they finished.",
     name: "Mark T.",
     place: "Johnson City, NY",
   },

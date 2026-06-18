@@ -26,7 +26,7 @@ const FAQS = [
   },
   {
     q: "How do I book?",
-    a: "Call or text Michael at (607) 759-8829, email pdpropertyservice@gmail.com, or fill out the quick quote form on this page. We'll get right back to you.",
+    a: "Call or text us at (607) 759-8829 (Michael) or (607) 340-5957 (Takota), email pdpropertyservice@gmail.com, or fill out the quick quote form on this page. We'll get right back to you.",
   },
 ];
 

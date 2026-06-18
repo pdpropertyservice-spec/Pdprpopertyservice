@@ -2,7 +2,7 @@ import { SectionHeading } from "./Primitives";
 import { IconShield, IconClock, IconDollar, IconHeart, IconPin, IconSparkle } from "./Icons";
 
 const BENEFITS = [
-  { icon: IconPin, title: "Local & owner-operated", desc: "Owner Michael Pavlisak is on every job. You get a neighbor who genuinely cares, not a faceless franchise." },
+  { icon: IconPin, title: "Local & owner-operated", desc: "As local owners, Michael and Takota are on every job. You get a team that genuinely cares, not a faceless franchise." },
   { icon: IconShield, title: "Fully insured & equipped", desc: "Commercial-grade gear and full coverage mean total peace of mind for your property." },
   { icon: IconClock, title: "Fast, reliable scheduling", desc: "Free quote within 24 hours and punctual arrivals that respect your time." },
   { icon: IconDollar, title: "Honest, upfront pricing", desc: "Transparent flat quotes with no hidden fees or pushy upsells—ever." },

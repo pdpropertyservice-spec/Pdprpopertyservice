@@ -8,7 +8,7 @@ export function CTA() {
   const onSubmit = async (e: FormEvent) => {
     e.preventDefault();
     
-    const FORMSPREE_ID = "xjgddlaw";
+    const FORMSPREE_ID = "xojzondl";
 
     setStatus("submitting");
     try {
@@ -57,7 +57,10 @@ export function CTA() {
               <ul className="reveal mt-8 space-y-4" data-delay="180">
                 <li className="flex items-center gap-3">
                   <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-forest-500/15 text-forest-300"><IconPhone className="h-5 w-5" /></span>
-                  <a href="tel:+16077598829" className="font-semibold text-white hover:text-forest-300">(607) 759-8829</a>
+                  <div className="flex flex-col">
+                    <a href="tel:+16077598829" className="font-semibold text-white hover:text-forest-300">Michael: (607) 759-8829</a>
+                    <a href="tel:+16073405957" className="font-semibold text-white hover:text-forest-300">Takota: (607) 340-5957</a>
+                  </div>
                 </li>
                 <li className="flex items-center gap-3">
                   <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-forest-500/15 text-forest-300"><IconMail className="h-5 w-5" /></span>
@@ -79,7 +82,7 @@ export function CTA() {
                   </div>
                   <h3 className="mt-5 text-2xl font-bold text-white">Request Sent!</h3>
                   <p className="mt-2 max-w-sm text-silver-300">
-                    Thanks for reaching out, {form.name}. Michael will review your details and get back to you shortly.
+                    Thanks for reaching out, {form.name}. Our team will review your details and get back to you shortly.
                   </p>
                 </div>
               ) : (

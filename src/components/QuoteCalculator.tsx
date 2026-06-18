@@ -98,7 +98,7 @@ export function QuoteCalculator() {
   }, [propertyType, buildup, access, selectedServices, houseSqft, drivewayCars, deckL, deckW, binCount, roofEnabled, gutterEnabled]);
 
   const handleBook = async () => {
-    const FORMSPREE_ID = "xjgddlaw";
+    const FORMSPREE_ID = "xojzondl";
 
     setSubmitStatus("submitting");
     const lines = estimate.lineItems.map((item) => `- ${item.label} (${item.desc}): $${item.price}`).join("\n");
@@ -278,7 +278,7 @@ export function QuoteCalculator() {
                 <div className="mt-6 rounded-xl border border-forest-400/30 bg-forest-500/20 p-5 text-center shadow-lg">
                   <IconCheck className="mx-auto mb-2 h-8 w-8 text-forest-400" />
                   <h4 className="text-lg font-bold text-white">Quote Request Sent!</h4>
-                  <p className="mt-1 text-sm text-silver-300">Michael will review your details and contact you shortly.</p>
+                  <p className="mt-1 text-sm text-silver-300">Our team will review your details and contact you shortly.</p>
                 </div>
               ) : (
                 <div className="mt-6 space-y-3">
