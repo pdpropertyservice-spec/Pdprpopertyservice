@@ -1,6 +1,6 @@
 const STATS = [
   { value: "Local", label: "Owner-operated" },
-  { value: "Insured", label: "& equipped right" },
+  { value: "Pro Gear", label: "Commercial-grade" },
   { value: "24h", label: "Quote turnaround" },
   { value: "100%", label: "Satisfaction promise" },
 ];

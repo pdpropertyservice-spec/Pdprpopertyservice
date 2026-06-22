@@ -77,7 +77,7 @@ export function Hero() {
             </div>
             <div className="flex items-center gap-2 text-sm text-silver-300">
               <IconShield className="h-5 w-5 text-forest-400" />
-              Fully insured
+              Satisfaction guaranteed
             </div>
             <div className="flex items-center gap-2 text-sm text-silver-300">
               <IconPin className="h-5 w-5 text-forest-400" />

@@ -14,7 +14,7 @@ const FAQS = [
   },
   {
     q: "Will pressure washing damage my surfaces?",
-    a: "Not when it's done right. We match the technique and pressure to each material—using gentle soft-wash methods for siding and roofs, and higher pressure only where it's safe. Your property is in experienced, insured hands.",
+    a: "Not when it's done right. We match the technique and pressure to each material—using gentle soft-wash methods for siding and roofs, and higher pressure only where it's safe. Your property is in experienced, careful hands.",
   },
   {
     q: "Do I need to be home during the service?",

@@ -1,5 +1,5 @@
 import { SectionHeading } from "./Primitives";
-import { IconSpray, IconLeaf, IconSnow, IconTruck, IconArrow } from "./Icons";
+import { IconSpray, IconSparkle, IconSnow, IconTruck, IconArrow } from "./Icons";
 
 const SERVICES = [
   {
@@ -11,10 +11,10 @@ const SERVICES = [
     items: ["Driveways & concrete", "House & vinyl siding", "Decks, patios & fences"],
   },
   {
-    icon: IconTruck,
-    title: "Junk Removal",
-    desc: "Fast, hassle-free hauling of unwanted items, debris, and clutter so your property looks clean and clear.",
-    items: ["Garage & yard cleanouts", "Debris & bulk haul-away"],
+    icon: IconSparkle,
+    title: "Garbage Can Cleaning",
+    desc: "Quick and affordable sanitizing of your nasty trash and recycling bins—just $20 per can.",
+    items: ["Interior & exterior rinse", "Multi-can pricing", "Bundle with other services"],
   },
   {
     icon: IconSnow,
@@ -23,10 +23,10 @@ const SERVICES = [
     items: ["Driveway & walkway clearing", "Seasonal availability"],
   },
   {
-    icon: IconLeaf,
-    title: "Lawn Care",
-    desc: "Mowing, trimming, and seasonal upkeep that keeps your curb appeal sharp all year round.",
-    items: ["Mowing & edging", "Seasonal maintenance"],
+    icon: IconTruck,
+    title: "Single Item Hauling",
+    desc: "Got one big bulky item you need gone? We can haul away a single large item like a couch, appliance, or mattress.",
+    items: ["1 large item at a time", "Limited haul capacity", "Quoted on a case-by-case basis"],
   },
 ];
 

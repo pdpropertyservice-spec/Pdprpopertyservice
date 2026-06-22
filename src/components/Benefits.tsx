@@ -3,7 +3,7 @@ import { IconShield, IconClock, IconDollar, IconHeart, IconPin, IconSparkle } fr
 
 const BENEFITS = [
   { icon: IconPin, title: "Local & owner-operated", desc: "As local owners, Michael and Takota are on every job. You get a team that genuinely cares, not a faceless franchise." },
-  { icon: IconShield, title: "Fully insured & equipped", desc: "Commercial-grade gear and full coverage mean total peace of mind for your property." },
+  { icon: IconShield, title: "Commercial-grade equipment", desc: "We use professional, surface-safe gear—the right tool for every job, so your property is treated carefully." },
   { icon: IconClock, title: "Fast, reliable scheduling", desc: "Free quote within 24 hours and punctual arrivals that respect your time." },
   { icon: IconDollar, title: "Honest, upfront pricing", desc: "Transparent flat quotes with no hidden fees or pushy upsells—ever." },
   { icon: IconSparkle, title: "Detail-obsessed finish", desc: "We sweat the edges, corners, and trim others skip for a truly complete clean." },

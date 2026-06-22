@@ -1,34 +1,27 @@
 import { SectionHeading } from "./Primitives";
-import { IconTruck, IconSnow, IconLeaf, IconSparkle, IconCheck } from "./Icons";
+import { IconTruck, IconSnow, IconSparkle, IconCheck } from "./Icons";
 
 const CARDS = [
-  {
-    icon: IconTruck,
-    title: "Junk Removal",
-    price: "From $75",
-    details: "Light haul-away and small cleanouts",
-    notes: ["Small pickup loads", "Yard debris & clutter", "Final price based on load size"],
-  },
-  {
-    icon: IconSnow,
-    title: "Snow Removal",
-    price: "From $45/visit",
-    details: "Driveways and walkways",
-    notes: ["Single visit pricing", "Weather depth affects final quote", "Seasonal scheduling varies"],
-  },
-  {
-    icon: IconLeaf,
-    title: "Lawn Care",
-    price: "From $40/cut",
-    details: "Basic mowing and trim work",
-    notes: ["Small to mid-size yards", "Overgrowth may be higher", "Ongoing service quoted separately"],
-  },
   {
     icon: IconSparkle,
     title: "Garbage Can Cleaning",
     price: "$20 per can",
     details: "Quick exterior & interior rinse/clean",
     notes: ["Simple flat pricing", "Multi-can jobs welcome", "Best bundled with other services"],
+  },
+  {
+    icon: IconSnow,
+    title: "Snow Removal",
+    price: "From $45/visit",
+    details: "Driveways and walkways",
+    notes: ["Single visit pricing", "Weather depth affects final quote", "Seasonal availability"],
+  },
+  {
+    icon: IconTruck,
+    title: "Single Item Hauling",
+    price: "From $75",
+    details: "One large item pickup & disposal",
+    notes: ["Couches, appliances, mattresses", "1 large item at a time", "Limited haul capacity"],
   },
 ];
 
