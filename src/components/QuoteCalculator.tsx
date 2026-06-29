@@ -32,7 +32,9 @@ export function QuoteCalculator() {
   const [selectedServices, setSelectedServices] = useState<string[]>(["house", "driveway"]);
 
   const [houseSqft, setHouseSqft] = useState(2000);
-  const [drivewayCars, setDrivewayCars] = useState(2);
+  const [drivewaySqft, setDrivewaySqft] = useState(650);
+  const [windowPanes, setWindowPanes] = useState(40);
+  const [windowPackage, setWindowPackage] = useState<"outside" | "insideout">("insideout");
   const [deckL, setDeckL] = useState(15);
   const [deckW, setDeckW] = useState(10);
   const [binCount, setBinCount] = useState(2);
@@ -64,8 +66,21 @@ export function QuoteCalculator() {
     }
 
     if (selectedServices.includes("driveway")) {
-      const price = 125 + Math.max(0, drivewayCars - 2) * 45;
-      lineItems.push({ id: "driveway", label: "Driveway Surface Cleaning", desc: `${drivewayCars} car capacity`, price });
+      const price = Math.max(125, Math.round(125 + Math.max(0, drivewaySqft - 400) * 0.14));
+      lineItems.push({ id: "driveway", label: "Driveway Surface Cleaning", desc: `${drivewaySqft} concrete sq ft`, price });
+    }
+
+    if (selectedServices.includes("windows")) {
+      const insideOut = windowPackage === "insideout";
+      const price = insideOut
+        ? Math.max(95, Math.round(windowPanes * 4.5))
+        : Math.max(65, Math.round(windowPanes * 2.5));
+      lineItems.push({
+        id: "windows",
+        label: "Window Cleaning",
+        desc: `${windowPanes} panes, ${insideOut ? "inside & outside" : "outside only"}`,
+        price,
+      });
     }
 
     if (selectedServices.includes("deck")) {
@@ -95,7 +110,7 @@ export function QuoteCalculator() {
     const high = Math.round((total * 1.08) / 5) * 5;
 
     return { lineItems, subtotal, discount, propBase, accessMod, low, high };
-  }, [propertyType, buildup, access, selectedServices, houseSqft, drivewayCars, deckL, deckW, binCount, roofEnabled, gutterEnabled]);
+  }, [propertyType, buildup, access, selectedServices, houseSqft, drivewaySqft, windowPanes, windowPackage, deckL, deckW, binCount, roofEnabled, gutterEnabled]);
 
   const handleBook = async () => {
     const FORMSPREE_ID = "xojzondl";
@@ -218,8 +233,49 @@ export function QuoteCalculator() {
                   <input type="range" min="800" max="6000" step="100" value={houseSqft} onChange={(e) => setHouseSqft(Number(e.target.value))} className="slider-thumb h-2 w-full cursor-pointer rounded-lg bg-white/10" />
                 </ServiceItem>
 
-                <ServiceItem label="Driveway Surface Cleaning" isSelected={selectedServices.includes("driveway")} onToggle={() => toggleService("driveway")} unit={`${drivewayCars} car capacity`}>
-                  <input type="range" min="2" max="10" step="1" value={drivewayCars} onChange={(e) => setDrivewayCars(Number(e.target.value))} className="slider-thumb h-2 w-full cursor-pointer rounded-lg bg-white/10" />
+                <ServiceItem label="Driveway Surface Cleaning" isSelected={selectedServices.includes("driveway")} onToggle={() => toggleService("driveway")} unit={`${drivewaySqft} concrete sq ft`}>
+                  <input type="range" min="150" max="3200" step="50" value={drivewaySqft} onChange={(e) => setDrivewaySqft(Number(e.target.value))} className="slider-thumb h-2 w-full cursor-pointer rounded-lg bg-white/10" />
+                  <div className="mt-2 flex justify-between text-xs text-silver-600">
+                    <span>150</span>
+                    <span>Included: 400</span>
+                    <span>3,200</span>
+                  </div>
+                </ServiceItem>
+
+                <ServiceItem label="Window Cleaning" isSelected={selectedServices.includes("windows")} onToggle={() => toggleService("windows")} unit={`${windowPanes} panes, ${windowPackage === "insideout" ? "in/out" : "outside"}`}>
+                  <div className="space-y-4">
+                    <input type="range" min="5" max="100" step="1" value={windowPanes} onChange={(e) => setWindowPanes(Number(e.target.value))} className="slider-thumb h-2 w-full cursor-pointer rounded-lg bg-white/10" />
+                    <div className="flex rounded-xl border border-white/10 bg-white/[0.03] p-1">
+                      <button
+                        type="button"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          e.stopPropagation();
+                          setWindowPackage("outside");
+                        }}
+                        className={cn(
+                          "flex-1 rounded-lg px-3 py-2 text-xs font-semibold transition-all",
+                          windowPackage === "outside" ? "bg-forest-500 text-white" : "text-silver-400 hover:text-white"
+                        )}
+                      >
+                        Outside only
+                      </button>
+                      <button
+                        type="button"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          e.stopPropagation();
+                          setWindowPackage("insideout");
+                        }}
+                        className={cn(
+                          "flex-1 rounded-lg px-3 py-2 text-xs font-semibold transition-all",
+                          windowPackage === "insideout" ? "bg-forest-500 text-white" : "text-silver-400 hover:text-white"
+                        )}
+                      >
+                        Inside & outside
+                      </button>
+                    </div>
+                  </div>
                 </ServiceItem>
 
                 <ServiceItem label="Deck / Patio Restoration" isSelected={selectedServices.includes("deck")} onToggle={() => toggleService("deck")} unit={`${deckL}ft × ${deckW}ft (${deckL * deckW} sq ft)`}>

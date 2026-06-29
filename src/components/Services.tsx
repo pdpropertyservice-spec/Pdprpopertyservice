@@ -1,5 +1,5 @@
 import { SectionHeading } from "./Primitives";
-import { IconSpray, IconSparkle, IconSnow, IconTruck, IconArrow } from "./Icons";
+import { IconSpray, IconSparkle, IconSnow, IconArrow } from "./Icons";
 
 const SERVICES = [
   {
@@ -12,6 +12,12 @@ const SERVICES = [
   },
   {
     icon: IconSparkle,
+    title: "Window Cleaning",
+    desc: "Commercial storefront and residential window cleaning with clean glass, detailed edges, and reliable recurring options.",
+    items: ["Storefront glass", "Inside & outside", "Bi-weekly or monthly routes"],
+  },
+  {
+    icon: IconSparkle,
     title: "Garbage Can Cleaning",
     desc: "Quick and affordable sanitizing of your nasty trash and recycling bins—just $20 per can.",
     items: ["Interior & exterior rinse", "Multi-can pricing", "Bundle with other services"],
@@ -21,12 +27,6 @@ const SERVICES = [
     title: "Snow Removal",
     desc: "Reliable winter clearing for driveways and walkways—keeping your property safe and accessible all season.",
     items: ["Driveway & walkway clearing", "Seasonal availability"],
-  },
-  {
-    icon: IconTruck,
-    title: "Single Item Hauling",
-    desc: "Got one big bulky item you need gone? We can haul away a single large item like a couch, appliance, or mattress.",
-    items: ["1 large item at a time", "Limited haul capacity", "Quoted on a case-by-case basis"],
   },
 ];
 

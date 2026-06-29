@@ -22,7 +22,7 @@ const FAQS = [
   },
   {
     q: "What other services do you offer?",
-    a: "Beyond pressure washing, PD Property Services also offers junk removal, snow removal, lawn care, and garbage can cleaning at honest starting rates. Availability varies by season and job, so just ask and we'll let you know.",
+    a: "Beyond pressure washing, PD Property Services also offers window cleaning, garbage can cleaning, and seasonal snow removal at honest starting rates. Availability varies by season and job, so just ask and we'll let you know.",
   },
   {
     q: "How do I book?",

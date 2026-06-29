@@ -1,7 +1,14 @@
 import { SectionHeading } from "./Primitives";
-import { IconTruck, IconSnow, IconSparkle, IconCheck } from "./Icons";
+import { IconSnow, IconSparkle, IconCheck } from "./Icons";
 
 const CARDS = [
+  {
+    icon: IconSparkle,
+    title: "Window Cleaning",
+    price: "From $65/visit",
+    details: "Storefront and residential glass",
+    notes: ["Outside-only or inside/outside", "One-time or recurring routes", "Priced by pane count"],
+  },
   {
     icon: IconSparkle,
     title: "Garbage Can Cleaning",
@@ -15,13 +22,6 @@ const CARDS = [
     price: "From $45/visit",
     details: "Driveways and walkways",
     notes: ["Single visit pricing", "Weather depth affects final quote", "Seasonal availability"],
-  },
-  {
-    icon: IconTruck,
-    title: "Single Item Hauling",
-    price: "From $75",
-    details: "One large item pickup & disposal",
-    notes: ["Couches, appliances, mattresses", "1 large item at a time", "Limited haul capacity"],
   },
 ];
 
