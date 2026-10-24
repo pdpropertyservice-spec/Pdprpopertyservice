@@ -57,3 +57,15 @@ export const IconPlus = (p: SVGProps<SVGSVGElement>) => (
 export const IconSparkle = (p: SVGProps<SVGSVGElement>) => (
   <svg {...base} {...p}><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2 2M16 16l2 2M18 6l-2 2M8 16l-2 2" /></svg>
 );
+export const IconWindow = (p: SVGProps<SVGSVGElement>) => (
+  <svg {...base} {...p}><rect x="4" y="3" width="16" height="18" rx="1.5" /><path d="M12 3v18M4 12h16" /><path d="M7 6.5l2.5-2M7 9l4.5-4" opacity="0.7" /></svg>
+);
+export const IconStore = (p: SVGProps<SVGSVGElement>) => (
+  <svg {...base} {...p}><path d="M3 9l1.5-5h15L21 9" /><path d="M3 9h18v1.5a3 3 0 0 1-6 0 3 3 0 0 1-6 0 3 3 0 0 1-6 0V9z" /><path d="M5 13.5V21h14v-7.5" /><rect x="8" y="15" width="8" height="6" /></svg>
+);
+export const IconSqueegee = (p: SVGProps<SVGSVGElement>) => (
+  <svg {...base} {...p}><path d="M4 8h16" /><path d="M5 8V6.5h14V8" /><path d="M12 8v5" /><path d="M10.5 13h3l.5 8h-4z" /></svg>
+);
+export const IconRepeat = (p: SVGProps<SVGSVGElement>) => (
+  <svg {...base} {...p}><path d="M17 2l3 3-3 3" /><path d="M4 11V9a4 4 0 0 1 4-4h12" /><path d="M7 22l-3-3 3-3" /><path d="M20 13v2a4 4 0 0 1-4 4H4" /></svg>
+);

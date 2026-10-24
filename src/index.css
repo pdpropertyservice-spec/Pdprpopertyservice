@@ -1,17 +1,17 @@
 @import "tailwindcss";
 
 @theme {
-  --color-forest-50: #effaf1;
-  --color-forest-100: #d8f0dd;
-  --color-forest-200: #b3e1bf;
-  --color-forest-300: #82ca97;
-  --color-forest-400: #4fac6c;
-  --color-forest-500: #2f8f4e;
-  --color-forest-600: #21733d;
-  --color-forest-700: #1c5c33;
-  --color-forest-800: #18482b;
-  --color-forest-900: #143b25;
-  --color-forest-950: #0a2114;
+  --color-forest-50: #eef8fd;
+  --color-forest-100: #d6eefa;
+  --color-forest-200: #b0def5;
+  --color-forest-300: #7cc6ec;
+  --color-forest-400: #3ea8df;
+  --color-forest-500: #1e8bc6;
+  --color-forest-600: #156fa3;
+  --color-forest-700: #135985;
+  --color-forest-800: #134a6c;
+  --color-forest-900: #133e5a;
+  --color-forest-950: #0b2539;
 
 
   --color-silver-100: #f4f6f7;
@@ -20,8 +20,8 @@
   --color-silver-400: #a3afb4;
   --color-silver-500: #7e8c92;
 
-  --color-ink-900: #0a0f0c;
-  --color-ink-950: #060907;
+  --color-ink-900: #0a0e13;
+  --color-ink-950: #05080c;
 
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
 
@@ -149,9 +149,9 @@ body {
 }
 
 ::-webkit-scrollbar { width: 10px; }
-::-webkit-scrollbar-track { background: #060907; }
+::-webkit-scrollbar-track { background: #05080c; }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(#21733d, #18482b);
+  background: linear-gradient(#156fa3, #134a6c);
   border-radius: 99px;
 }
 

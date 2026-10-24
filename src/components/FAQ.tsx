@@ -9,20 +9,20 @@ const FAQS = [
     a: "We proudly serve Broome County, NY and the surrounding areas—including Binghamton, Vestal, Endicott, Johnson City, and nearby towns. Not sure if you're in range? Just reach out and we'll let you know.",
   },
   {
-    q: "How much does pressure washing cost?",
-    a: "Every property is different. Use the instant quote calculator on this page to build a custom estimate based on your home, driveway, deck, and any add-ons—then we'll confirm a flat-rate quote, usually within 24 hours.",
+    q: "How much does window cleaning cost?",
+    a: "Every property is different. Pricing depends on how many windows you have, outside-only vs. inside & outside, and how easy they are to reach. Send us a quick request and we'll get you a free, flat-rate quote, usually within 24 hours.",
   },
   {
-    q: "Will pressure washing damage my surfaces?",
-    a: "Not when it's done right. We match the technique and pressure to each material—using gentle soft-wash methods for siding and roofs, and higher pressure only where it's safe. Your property is in experienced, careful hands.",
+    q: "Do you clean inside and outside?",
+    a: "Yes. Choose outside-only or a full inside-and-outside clean—just let us know which you'd like when you request your quote.",
   },
   {
     q: "Do I need to be home during the service?",
-    a: "Not necessarily. As long as we have access to the areas being cleaned and a water source, you're welcome to go about your day. We'll confirm everything beforehand and send before & after photos.",
+    a: "For outside-only cleaning, no—as long as we can reach the windows, you're welcome to go about your day. For inside & outside cleaning, someone will need to let us in. We'll confirm everything beforehand.",
   },
   {
-    q: "What other services do you offer?",
-    a: "Beyond pressure washing, PD Property Services also offers window cleaning, garbage can cleaning, and seasonal snow removal at honest starting rates. Availability varies by season and job, so just ask and we'll let you know.",
+    q: "Do you offer recurring window cleaning?",
+    a: "Yes. We offer bi-weekly and monthly routes for homes and storefronts so your windows stay clear all year. Reach out and we'll put together a plan for your property.",
   },
   {
     q: "How do I book?",

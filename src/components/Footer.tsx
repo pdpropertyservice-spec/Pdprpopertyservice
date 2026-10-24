@@ -1,10 +1,10 @@
 import { Logo } from "./Logo";
 import { IconPhone, IconMail, IconPin } from "./Icons";
 
-const SERVICES = ["Pressure Washing", "Junk Removal", "Snow Removal", "Lawn Care"];
+const SERVICES = ["Residential Windows", "Storefront & Commercial", "Inside & Outside", "Recurring Service"];
 const LINKS = [
   { label: "Services", href: "#services" },
-  { label: "Results", href: "#showcase" },
+  { label: "How It Works", href: "#how-it-works" },
   { label: "Why Us", href: "#benefits" },
   { label: "Get a Quote", href: "#quote" },
   { label: "FAQ", href: "#faq" },
@@ -20,8 +20,8 @@ export function Footer() {
           <div className="lg:col-span-1">
             <Logo />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-silver-400">
-              Professional pressure washing & property maintenance.
-              <span className="block font-medium text-silver-200">Your property. Our priority.</span>
+              Professional window cleaning for homes & storefronts.
+              <span className="block font-medium text-silver-200">Crystal clear, every time.</span>
             </p>
           </div>
 
@@ -74,7 +74,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 sm:flex-row">
-          <p className="text-xs text-silver-500">© {new Date().getFullYear()} PD Property Services. All rights reserved.</p>
+          <p className="text-xs text-silver-500">© {new Date().getFullYear()} Pav's Window Co. All rights reserved.</p>
           <p className="text-xs text-silver-500">Proudly serving Broome County & surrounding areas.</p>
         </div>
       </div>

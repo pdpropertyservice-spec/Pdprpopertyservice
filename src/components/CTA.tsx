@@ -3,7 +3,7 @@ import { IconPhone, IconMail, IconPin, IconCheck, IconArrow } from "./Icons";
 
 export function CTA() {
   const [status, setStatus] = useState<"idle" | "submitting" | "success">("idle");
-  const [form, setForm] = useState({ name: "", contact: "", service: "Pressure Washing", message: "" });
+  const [form, setForm] = useState({ name: "", contact: "", service: "Window Cleaning - Inside & outside", message: "" });
 
   const onSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -46,11 +46,11 @@ export function CTA() {
                 Free Quote
               </span>
               <h2 className="reveal mt-5 text-3xl font-black leading-tight text-white sm:text-4xl" data-delay="60">
-                Ready for a property that{" "}
-                <span className="silver-sheen">turns heads?</span>
+                Ready for windows you can{" "}
+                <span className="silver-sheen">actually see through?</span>
               </h2>
               <p className="reveal mt-4 text-silver-300" data-delay="120">
-                Tell us what needs cleaning and we'll send a fast, honest quote—
+                Tell us about your windows and we'll send a fast, honest quote—
                 usually within 24 hours. No pressure, no obligation.
               </p>
 
@@ -112,11 +112,10 @@ export function CTA() {
                       onChange={(e) => setForm({ ...form, service: e.target.value })}
                       className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white outline-none transition-colors focus:border-forest-400/60 focus:bg-white/[0.07] [&>option]:bg-ink-900"
                     >
-                      <option>Pressure Washing</option>
-                      <option>Junk Removal</option>
-                      <option>Snow Removal</option>
-                      <option>Lawn Care</option>
-                      <option>Multiple services</option>
+                      <option>Window Cleaning - Outside only</option>
+                      <option>Window Cleaning - Inside & outside</option>
+                      <option>Storefront / Commercial windows</option>
+                      <option>Recurring service (bi-weekly or monthly)</option>
                     </select>
                   </div>
                   <div>
@@ -124,7 +123,7 @@ export function CTA() {
                     <textarea
                       id="message" rows={3} value={form.message}
                       onChange={(e) => setForm({ ...form, message: e.target.value })}
-                      placeholder="Tell us about your property and what you'd like cleaned…"
+                      placeholder="Tell us about your windows: roughly how many, and how many stories…"
                       className="w-full resize-none rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-silver-500 outline-none transition-colors focus:border-forest-400/60 focus:bg-white/[0.07]"
                     />
                   </div>

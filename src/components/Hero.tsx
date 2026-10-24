@@ -32,17 +32,17 @@ export function Hero() {
           </div>
 
           <h1 className="reveal mt-6 text-4xl font-black leading-[1.05] tracking-tight text-white sm:text-6xl" data-delay="80">
-            Restore your property to{" "}
+            Windows so clean,{" "}
             <span className="relative whitespace-nowrap">
-              <span className="silver-sheen">like-new</span>
+              <span className="silver-sheen">you'll forget</span>
             </span>{" "}
-            with pro <span className="text-forest-400">pressure washing</span>.
+            <span className="text-forest-400">they're there</span>.
           </h1>
 
           <p className="reveal mt-6 max-w-xl text-lg leading-relaxed text-silver-300" data-delay="160">
-            Years of grime, algae, and stains—gone in hours. PD Property Services
-            delivers a flawless, streak-free clean for driveways, siding, decks,
-            and more. <span className="text-silver-100 font-medium">Your property. Our priority.</span>
+            Pav's Window Co. brings the shine back to your home or storefront—
+            spotless glass and detailed edges, inside and out, with one-time or
+            recurring service. <span className="text-silver-100 font-medium">Crystal clear, every time.</span>
           </p>
 
           <div className="reveal mt-8 flex flex-col gap-3 sm:flex-row" data-delay="240">
@@ -90,12 +90,7 @@ export function Hero() {
         <div className="reveal relative" data-delay="200">
           <div className="absolute -inset-4 -z-10 rounded-[2rem] bg-gradient-to-tr from-forest-600/30 to-transparent blur-2xl" />
           <div className="group relative overflow-hidden rounded-[1.75rem] border border-white/10 shadow-2xl shadow-black/60">
-            <img
-              src="/images/hero.jpg"
-              alt="Pressure washer blasting clean a concrete driveway"
-              className="h-[26rem] w-full object-cover transition-transform duration-[1.2s] group-hover:scale-105 sm:h-[32rem]"
-              loading="eager"
-            />
+            <WindowArt className="h-[26rem] w-full transition-transform duration-[1.2s] group-hover:scale-105 sm:h-[32rem]" />
             <div className="absolute inset-0 bg-gradient-to-t from-ink-950 via-ink-950/10 to-transparent" />
 
             {/* Floating stat card */}
@@ -118,5 +113,65 @@ export function Hero() {
         </div>
       </div>
     </section>
+  );
+}
+
+function WindowArt({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 600 640" preserveAspectRatio="xMidYMid slice" className={className} role="img" aria-label="A window half cleaned with a squeegee, showing streak-free glass">
+      <defs>
+        <linearGradient id="hw-sky" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#7cc6ec" />
+          <stop offset="55%" stopColor="#b0def5" />
+          <stop offset="100%" stopColor="#eef8fd" />
+        </linearGradient>
+        <linearGradient id="hw-wall" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stopColor="#0a0e13" />
+          <stop offset="100%" stopColor="#133e5a" />
+        </linearGradient>
+        <filter id="hw-grime" x="0" y="0" width="100%" height="100%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="4" seed="7" />
+          <feColorMatrix values="0 0 0 0 0.42  0 0 0 0 0.39  0 0 0 0 0.33  0 0 0 1.25 -0.3" />
+        </filter>
+        <clipPath id="hw-glass">
+          <rect x="132" y="112" width="160" height="196" rx="4" />
+          <rect x="308" y="112" width="160" height="196" rx="4" />
+          <rect x="132" y="324" width="160" height="196" rx="4" />
+          <rect x="308" y="324" width="160" height="196" rx="4" />
+        </clipPath>
+        <clipPath id="hw-dirty">
+          <path d="M100 80 H600 V560 H360 L360 80 Z" />
+        </clipPath>
+      </defs>
+
+      <rect width="600" height="640" fill="url(#hw-wall)" />
+      <rect x="100" y="80" width="400" height="472" rx="10" fill="#e3e8ea" />
+      <rect x="116" y="96" width="368" height="440" rx="6" fill="#c8d1d4" />
+
+      <g clipPath="url(#hw-glass)">
+        <rect x="100" y="80" width="400" height="472" fill="url(#hw-sky)" />
+        <ellipse cx="210" cy="190" rx="44" ry="20" fill="#ffffff" opacity="0.9" />
+        <ellipse cx="245" cy="182" rx="34" ry="18" fill="#ffffff" opacity="0.9" />
+        <ellipse cx="420" cy="240" rx="40" ry="16" fill="#ffffff" opacity="0.8" />
+        <path d="M100 470 Q220 420 330 455 T500 440 V560 H100 Z" fill="#1e8bc6" opacity="0.35" />
+        <path d="M150 300 L250 130 L275 130 L175 300 Z" fill="#ffffff" opacity="0.35" />
+        <path d="M190 500 L290 330 L302 330 L202 500 Z" fill="#ffffff" opacity="0.3" />
+        <g clipPath="url(#hw-dirty)">
+          <rect x="100" y="80" width="400" height="472" filter="url(#hw-grime)" opacity="0.95" />
+          <rect x="100" y="80" width="400" height="472" fill="#6b6455" opacity="0.25" />
+        </g>
+      </g>
+
+      <rect x="292" y="104" width="16" height="424" fill="#e3e8ea" />
+      <rect x="124" y="308" width="352" height="16" fill="#e3e8ea" />
+      <rect x="84" y="548" width="432" height="22" rx="4" fill="#f4f6f7" />
+
+      <g transform="translate(360 300) rotate(-8)">
+        <rect x="-10" y="-150" width="20" height="300" rx="6" fill="#0a0e13" />
+        <rect x="-4" y="-150" width="8" height="300" rx="3" fill="#3ea8df" />
+        <rect x="10" y="-22" width="70" height="44" rx="10" fill="#156fa3" />
+        <rect x="76" y="-12" width="120" height="24" rx="12" fill="#134a6c" />
+      </g>
+    </svg>
   );
 }

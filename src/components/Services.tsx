@@ -1,32 +1,32 @@
 import { SectionHeading } from "./Primitives";
-import { IconSpray, IconSparkle, IconSnow, IconArrow } from "./Icons";
+import { IconWindow, IconStore, IconSqueegee, IconRepeat, IconArrow } from "./Icons";
 
 const SERVICES = [
   {
-    icon: IconSpray,
-    title: "Pressure Washing",
-    tag: "Our specialty",
+    icon: IconWindow,
+    title: "Residential Windows",
+    tag: "Most popular",
     featured: true,
-    desc: "Driveways, sidewalks, patios, siding, decks, and fences—blasted free of dirt, mold, algae, and stubborn stains with the right pressure for every surface.",
-    items: ["Driveways & concrete", "House & vinyl siding", "Decks, patios & fences"],
+    desc: "Spotless glass for homes of every size—from townhouses to large two-story houses—with detailed edges and a streak-free finish.",
+    items: ["Single & two-story homes", "Outside-only or inside & out", "Free, no-obligation quotes"],
   },
   {
-    icon: IconSparkle,
-    title: "Window Cleaning",
-    desc: "Commercial storefront and residential window cleaning with clean glass, detailed edges, and reliable recurring options.",
-    items: ["Storefront glass", "Inside & outside", "Bi-weekly or monthly routes"],
+    icon: IconStore,
+    title: "Storefront & Commercial",
+    desc: "Clean, clear glass that makes a great first impression on your customers, with reliable recurring options.",
+    items: ["Storefront glass & doors", "Commercial facilities", "Recurring route options"],
   },
   {
-    icon: IconSparkle,
-    title: "Garbage Can Cleaning",
-    desc: "Quick and affordable sanitizing of your nasty trash and recycling bins—just $20 per can.",
-    items: ["Interior & exterior rinse", "Multi-can pricing", "Bundle with other services"],
+    icon: IconSqueegee,
+    title: "Inside & Outside Detail",
+    desc: "Both sides of every pane cleaned, so your view is clear no matter which side you're looking from.",
+    items: ["Both sides of the glass", "Detailed edges", "Satisfaction guaranteed"],
   },
   {
-    icon: IconSnow,
-    title: "Snow Removal",
-    desc: "Reliable winter clearing for driveways and walkways—keeping your property safe and accessible all season.",
-    items: ["Driveway & walkway clearing", "Seasonal availability"],
+    icon: IconRepeat,
+    title: "Recurring Service",
+    desc: "Set it and forget it. Regular routes keep your windows clear all year without you having to think about it.",
+    items: ["Bi-weekly routes", "Monthly routes", "Homes & storefronts"],
   },
 ];
 
@@ -36,9 +36,9 @@ export function Services() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <SectionHeading
           eyebrow="What we do"
-          title="One crew for your"
-          highlight="entire property"
-          subtitle="Pressure washing is our craft—but PD Property Services keeps your home looking its best in every season."
+          title="Window cleaning,"
+          highlight="done right"
+          subtitle="Windows are all we do at Pav's Window Co.—so every pane gets our full attention, at home or at your storefront."
         />
 
         <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-4">

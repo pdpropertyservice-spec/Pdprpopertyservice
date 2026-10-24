@@ -5,9 +5,8 @@ import { IconPhone } from "./Icons";
 
 const LINKS = [
   { label: "Services", href: "#services" },
-  { label: "Results", href: "#showcase" },
+  { label: "How It Works", href: "#how-it-works" },
   { label: "Why Us", href: "#benefits" },
-  { label: "Quote", href: "#quote" },
   { label: "FAQ", href: "#faq" },
 ];
 
