@@ -1,5 +1,5 @@
 import { Logo } from "./Logo";
-import { BUSINESS, NAV } from "../content";
+import { BUSINESS, NAV, PHONE } from "../content";
 
 const SERVICES = ["Home windows", "Storefront & business", "Inside & outside", "Regular cleanings"];
 
@@ -9,9 +9,9 @@ export function Footer() {
       <div className="wrap">
         <div className="footer__grid">
           <div className="footer__brand">
-            <Logo light />
+            <Logo />
             <p>Window cleaning for homes and storefronts in Broome County, NY.</p>
-            <p className="footer__owners">Owned and operated by {BUSINESS.owners}.</p>
+            <p className="footer__owner">Owned and operated by {BUSINESS.owner}.</p>
           </div>
 
           <div>
@@ -42,13 +42,9 @@ export function Footer() {
           <div>
             <h3>Contact</h3>
             <ul>
-              {BUSINESS.phones.map((p) => (
-                <li key={p.href}>
-                  <a href={p.href}>
-                    {p.name}: {p.display}
-                  </a>
-                </li>
-              ))}
+              <li>
+                <a href={PHONE.href}>{PHONE.display}</a>
+              </li>
               <li>
                 <a href={`mailto:${BUSINESS.email}`} className="footer__email">
                   {BUSINESS.email}

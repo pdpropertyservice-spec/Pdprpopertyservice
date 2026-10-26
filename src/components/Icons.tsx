@@ -109,8 +109,23 @@ export const IconRepeat = (p: P) => (
     <path d="M20 13v2a4 4 0 0 1-4 4H4" />
   </svg>
 );
-export const IconDrag = (p: P) => (
+export const IconHome = (p: P) => (
   <svg {...base} {...p}>
-    <path d="M8 7l-5 5 5 5M16 7l5 5-5 5M3 12h18" />
+    <path d="M3 10.5 12 3l9 7.5" />
+    <path d="M5 9v12h14V9" />
+    <path d="M10 21v-6h4v6" />
+  </svg>
+);
+export const IconStore = (p: P) => (
+  <svg {...base} {...p}>
+    <path d="M3 9l1.5-5h15L21 9" />
+    <path d="M3 9h18v1.5a3 3 0 0 1-6 0 3 3 0 0 1-6 0 3 3 0 0 1-6 0z" />
+    <path d="M5 13.5V21h14v-7.5" />
+    <path d="M9 21v-5h6v5" />
+  </svg>
+);
+export const IconSparkle = (p: P) => (
+  <svg {...base} {...p}>
+    <path d="M12 3c.6 4.2 2.8 6.4 7 7-4.2.6-6.4 2.8-7 7-.6-4.2-2.8-6.4-7-7 4.2-.6 6.4-2.8 7-7z" />
   </svg>
 );

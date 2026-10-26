@@ -1,36 +1,37 @@
 import { useId } from "react";
 
-function useSvgId() {
-  return useId().replace(/[^a-zA-Z0-9_-]/g, "");
-}
-
+/** The Pav's mark: a "P" whose loop is a four-pane window. */
 export function LogoMark({ className }: { className?: string }) {
-  const id = useSvgId();
-  const fill = `url(#${id}-pane)`;
+  const id = useId().replace(/[^a-zA-Z0-9_-]/g, "");
   return (
-    <svg className={className} viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+    <svg className={className} viewBox="0 0 48 48" aria-hidden="true" focusable="false">
       <defs>
-        <linearGradient id={`${id}-pane`} x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stopColor="#9BD3F4" />
-          <stop offset="1" stopColor="#1B78BE" />
+        <linearGradient id={`${id}-s`} x1="0" y1="0" x2="0.35" y2="1">
+          <stop offset="0" stopColor="#FFFFFF" />
+          <stop offset="0.42" stopColor="#C9D1D5" />
+          <stop offset="0.7" stopColor="#8E9AA0" />
+          <stop offset="1" stopColor="#E6EBED" />
+        </linearGradient>
+        <linearGradient id={`${id}-e`} x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stopColor="#45DFA0" />
+          <stop offset="0.55" stopColor="#0F9A66" />
+          <stop offset="1" stopColor="#075B3D" />
         </linearGradient>
       </defs>
-      <rect x="1.5" y="1.5" width="37" height="37" rx="8" className="logo__frame" />
-      <rect x="6" y="6" width="12.5" height="12.5" rx="2.5" fill={fill} />
-      <rect x="21.5" y="6" width="12.5" height="12.5" rx="2.5" fill={fill} />
-      <rect x="6" y="21.5" width="12.5" height="12.5" rx="2.5" fill={fill} />
-      <rect x="21.5" y="21.5" width="12.5" height="12.5" rx="2.5" fill={fill} />
-      <path d="M9 15 15 9M9 10.6 10.6 9" stroke="#FFFFFF" strokeWidth="1.8" strokeLinecap="round" />
+      <path d="M10 5H31a11 11 0 0 1 11 11v4a11 11 0 0 1-11 11H18v12h-8Z" fill={`url(#${id}-s)`} />
+      <path d="M18 11h13a4 4 0 0 1 4 4v6a4 4 0 0 1-4 4H18Z" fill={`url(#${id}-e)`} />
+      <path d="M26.5 11v14M18 18h17" stroke={`url(#${id}-s)`} strokeWidth="1.8" />
+      <path d="M20 16.2 24.2 12" stroke="#FFFFFF" strokeWidth="1.1" strokeLinecap="round" opacity="0.85" />
     </svg>
   );
 }
 
-export function Logo({ light = false }: { light?: boolean }) {
+export function Logo() {
   return (
-    <a href="#top" className={light ? "logo logo--light" : "logo"} aria-label="Pav's Window Co. home">
+    <a href="#top" className="logo" aria-label="Pav's Window Co. home">
       <LogoMark className="logo__mark" />
       <span className="logo__text" aria-hidden="true">
-        <span className="logo__name">Pav's</span>
+        <span className="logo__name silver">PAV'S</span>
         <span className="logo__sub">Window Co.</span>
       </span>
     </a>

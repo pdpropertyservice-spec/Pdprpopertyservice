@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Logo } from "./Logo";
 import { IconArrow, IconClock, IconClose, IconMenu, IconPhone, IconPin } from "./Icons";
-import { MAIN_PHONE, NAV } from "../content";
+import { NAV, PHONE } from "../content";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -36,8 +36,8 @@ export function Header() {
             <span className="topbar__item">
               <IconClock /> Free quotes within 24 hours
             </span>
-            <a className="topbar__item topbar__phone" href={MAIN_PHONE.href}>
-              <IconPhone /> Call or text {MAIN_PHONE.display}
+            <a className="topbar__item topbar__phone" href={PHONE.href}>
+              <IconPhone /> Call or text {PHONE.display}
             </a>
           </span>
         </div>
@@ -56,10 +56,10 @@ export function Header() {
           </nav>
 
           <div className="header__actions">
-            <a className="header__phone" href={MAIN_PHONE.href}>
-              <IconPhone /> {MAIN_PHONE.display}
+            <a className="header__phone" href={PHONE.href}>
+              <IconPhone /> {PHONE.display}
             </a>
-            <a className="btn btn--amber header__cta" href="#quote">
+            <a className="btn btn--primary header__cta" href="#quote">
               Free quote
             </a>
             <button
@@ -83,10 +83,10 @@ export function Header() {
               </a>
             ))}
             <div className="mobile-nav__actions">
-              <a className="btn btn--ghost" href={MAIN_PHONE.href} onClick={close}>
-                <IconPhone /> Call {MAIN_PHONE.display}
+              <a className="btn btn--ghost" href={PHONE.href} onClick={close}>
+                <IconPhone /> Call {PHONE.display}
               </a>
-              <a className="btn btn--amber" href="#quote" onClick={close}>
+              <a className="btn btn--primary" href="#quote" onClick={close}>
                 Get a free quote <IconArrow />
               </a>
             </div>
