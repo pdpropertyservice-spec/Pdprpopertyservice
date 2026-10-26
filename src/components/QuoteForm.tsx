@@ -20,6 +20,18 @@ const EMPTY = {
   details: "",
 };
 
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+/** Sends a quote request to Formspree. Throws on failure. */
+async function sendQuote(payload: Record<string, string>) {
+  const res = await fetch(`https://formspree.io/f/${BUSINESS.formspreeId}`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json", Accept: "application/json" },
+    body: JSON.stringify(payload),
+  });
+  if (!res.ok) throw new Error(`Form service returned ${res.status}`);
+}
+
 function Choice({
   name,
   legend,
@@ -51,8 +63,93 @@ function Choice({
   );
 }
 
-/** Quote request form. `compact` is the short version shown at the top of the page. */
-export function QuoteForm({ compact = false, idPrefix }: { compact?: boolean; idPrefix: string }) {
+/** The two-field quote bar in the hero: name and a way to reach you. */
+export function QuickQuote() {
+  const [name, setName] = useState("");
+  const [contact, setContact] = useState("");
+  const [status, setStatus] = useState<Status>("idle");
+
+  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setStatus("sending");
+    const payload: Record<string, string> = {
+      _subject: `Window cleaning quote request from ${name}`,
+      form: "Quick quote (top of page)",
+      name,
+      contact,
+    };
+    if (EMAIL_RE.test(contact.trim())) payload.email = contact.trim();
+    try {
+      await sendQuote(payload);
+      setStatus("sent");
+    } catch {
+      setStatus("error");
+    }
+  };
+
+  if (status === "sent") {
+    return (
+      <div className="quick quick__done" role="status">
+        <IconCheckCircle />
+        <span>
+          <strong>Thanks, {name.split(" ")[0] || "neighbor"}. Your request is in.</strong>
+          <p>
+            Michael will reach out within 24 hours. Need us sooner? Call or text <a href={PHONE.href}>{PHONE.display}</a>.
+          </p>
+        </span>
+      </div>
+    );
+  }
+
+  return (
+    <div className="quick">
+      <form className="quick__form" onSubmit={onSubmit} aria-label="Quick quote request">
+        <div className="quick__field">
+          <label className="sr-only" htmlFor="qq-name">
+            Your name
+          </label>
+          <input
+            id="qq-name"
+            required
+            autoComplete="name"
+            placeholder="Your name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+        </div>
+        <div className="quick__field">
+          <label className="sr-only" htmlFor="qq-contact">
+            Phone or email
+          </label>
+          <input
+            id="qq-contact"
+            required
+            autoComplete="tel"
+            placeholder="Phone or email"
+            value={contact}
+            onChange={(e) => setContact(e.target.value)}
+          />
+        </div>
+        <button type="submit" className="btn btn--primary" disabled={status === "sending"}>
+          {status === "sending" ? "Sending…" : "Get my free quote"}
+          {status !== "sending" && <IconArrow />}
+        </button>
+      </form>
+      {status === "error" ? (
+        <p className="quick__alt form__error" role="alert">
+          Your request didn't go through. Please try again, or call or text <a href={PHONE.href}>{PHONE.display}</a>.
+        </p>
+      ) : (
+        <p className="quick__alt">
+          No obligation. Prefer to talk? Call or text <a href={PHONE.href}>{PHONE.display}</a>.
+        </p>
+      )}
+    </div>
+  );
+}
+
+/** The full quote request form near the bottom of the page. */
+export function QuoteForm({ idPrefix }: { idPrefix: string }) {
   const [form, setForm] = useState(EMPTY);
   const [status, setStatus] = useState<Status>("idle");
   const id = (k: string) => `${idPrefix}-${k}`;
@@ -67,28 +164,21 @@ export function QuoteForm({ compact = false, idPrefix }: { compact?: boolean; id
     setStatus("sending");
     const payload: Record<string, string> = {
       _subject: `Window cleaning quote request from ${form.name}`,
-      form: compact ? "Quick quote (top of page)" : "Full quote form",
+      form: "Full quote form",
       name: form.name,
       contact: form.contact,
+      address: form.address || "Not given",
       property: form.property,
       cleaning: form.clean,
+      frequency: form.frequency,
+      windows: form.windows || "Not given",
+      details: form.details || "None",
     };
-    if (!compact) {
-      payload.address = form.address || "Not given";
-      payload.frequency = form.frequency;
-      payload.windows = form.windows || "Not given";
-      payload.details = form.details || "None";
-    }
     const contact = form.contact.trim();
-    if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(contact)) payload.email = contact;
+    if (EMAIL_RE.test(contact)) payload.email = contact;
 
     try {
-      const res = await fetch(`https://formspree.io/f/${BUSINESS.formspreeId}`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify(payload),
-      });
-      if (!res.ok) throw new Error(`Form service returned ${res.status}`);
+      await sendQuote(payload);
       setStatus("sent");
     } catch {
       setStatus("error");
@@ -122,7 +212,7 @@ export function QuoteForm({ compact = false, idPrefix }: { compact?: boolean; id
 
   return (
     <form className="form" onSubmit={onSubmit}>
-      <div className={compact ? "form__row" : "form__row form__row--2"}>
+      <div className="form__row form__row--2">
         <div className="field">
           <label htmlFor={id("name")}>Your name</label>
           <input id={id("name")} className="input" required autoComplete="name" value={form.name} onChange={update("name")} />
@@ -140,65 +230,53 @@ export function QuoteForm({ compact = false, idPrefix }: { compact?: boolean; id
         </div>
       </div>
 
-      {!compact && (
-        <div className="field">
-          <label htmlFor={id("address")}>
-            Street address or town <span className="field__opt">(optional)</span>
-          </label>
-          <input
-            id={id("address")}
-            className="input"
-            autoComplete="street-address"
-            value={form.address}
-            onChange={update("address")}
-          />
-        </div>
-      )}
+      <div className="field">
+        <label htmlFor={id("address")}>
+          Street address or town <span className="field__opt">(optional)</span>
+        </label>
+        <input
+          id={id("address")}
+          className="input"
+          autoComplete="street-address"
+          value={form.address}
+          onChange={update("address")}
+        />
+      </div>
 
       <Choice name={id("property")} legend="Property" options={PROPERTY} value={form.property} onChange={choose("property")} />
+      <Choice name={id("clean")} legend="Cleaning" options={CLEAN} value={form.clean} onChange={choose("clean")} />
       <Choice
-        name={id("clean")}
-        legend="Cleaning"
-        options={compact ? CLEAN.slice(0, 2) : CLEAN}
-        value={form.clean}
-        onChange={choose("clean")}
+        name={id("frequency")}
+        legend="How often"
+        options={FREQUENCY}
+        value={form.frequency}
+        onChange={choose("frequency")}
       />
 
-      {!compact && (
-        <>
-          <Choice
-            name={id("frequency")}
-            legend="How often"
-            options={FREQUENCY}
-            value={form.frequency}
-            onChange={choose("frequency")}
-          />
-          <div className="field">
-            <label htmlFor={id("windows")}>
-              About how many windows? <span className="field__opt">(optional)</span>
-            </label>
-            <select id={id("windows")} className="input" value={form.windows} onChange={update("windows")}>
-              <option value="">Choose one</option>
-              {WINDOW_COUNTS.map((w) => (
-                <option key={w}>{w}</option>
-              ))}
-            </select>
-          </div>
-          <div className="field">
-            <label htmlFor={id("details")}>
-              Anything else we should know? <span className="field__opt">(optional)</span>
-            </label>
-            <textarea
-              id={id("details")}
-              className="input"
-              rows={3}
-              placeholder="For example: two-story house, a few hard-to-reach windows"
-              value={form.details}
-              onChange={update("details")}
-            />
-          </div>
-        </>
-      )}
+      <div className="field">
+        <label htmlFor={id("windows")}>
+          About how many windows? <span className="field__opt">(optional)</span>
+        </label>
+        <select id={id("windows")} className="input" value={form.windows} onChange={update("windows")}>
+          <option value="">Choose one</option>
+          {WINDOW_COUNTS.map((w) => (
+            <option key={w}>{w}</option>
+          ))}
+        </select>
+      </div>
+      <div className="field">
+        <label htmlFor={id("details")}>
+          Anything else we should know? <span className="field__opt">(optional)</span>
+        </label>
+        <textarea
+          id={id("details")}
+          className="input"
+          rows={3}
+          placeholder="For example: two-story house, a few hard-to-reach windows"
+          value={form.details}
+          onChange={update("details")}
+        />
+      </div>
 
       {status === "error" && (
         <p className="form__error" role="alert">
@@ -207,12 +285,10 @@ export function QuoteForm({ compact = false, idPrefix }: { compact?: boolean; id
       )}
 
       <button type="submit" className="btn btn--primary btn--lg form__submit" disabled={status === "sending"}>
-        {status === "sending" ? "Sending…" : compact ? "Get my free quote" : "Send my quote request"}
+        {status === "sending" ? "Sending…" : "Send my quote request"}
         {status !== "sending" && <IconArrow />}
       </button>
-      <p className="form__note">
-        {compact ? "No obligation. We reply within 24 hours." : "We reply within 24 hours. We only use your info to send your quote."}
-      </p>
+      <p className="form__note">We reply within 24 hours. We only use your info to send your quote.</p>
     </form>
   );
 }

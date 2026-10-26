@@ -38,13 +38,17 @@ export function QuoteSection() {
               </span>
               <span>
                 <span className="contact-list__label">Service area</span>
-                <span className="contact-list__value">Broome County, NY</span>
+                <span className="contact-list__value">{BUSINESS.region}</span>
               </span>
             </li>
           </ul>
         </div>
 
-        <div className="form-card panel">
+        <div className="form-card card">
+          <div className="form-card__head">
+            <h3>Request a quote</h3>
+            <p>Takes about a minute. We reply within 24 hours.</p>
+          </div>
           <QuoteForm idPrefix="fq" />
         </div>
       </div>

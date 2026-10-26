@@ -9,8 +9,8 @@ export function Footer() {
       <div className="wrap">
         <div className="footer__grid">
           <div className="footer__brand">
-            <Logo />
-            <p>Window cleaning for homes and storefronts in Broome County, NY.</p>
+            <Logo tone="night" />
+            <p>Window cleaning for homes and storefronts in {BUSINESS.region}.</p>
             <p className="footer__owner">Owned and operated by {BUSINESS.owner}.</p>
           </div>
 
@@ -50,14 +50,16 @@ export function Footer() {
                   {BUSINESS.email}
                 </a>
               </li>
-              <li>Broome County, NY</li>
+              <li>{BUSINESS.region}</li>
             </ul>
           </div>
         </div>
 
         <div className="footer__bottom">
-          <p>© {new Date().getFullYear()} Pav's Window Co. All rights reserved.</p>
-          <p>Locally owned and operated in Broome County, NY.</p>
+          <span>
+            © {new Date().getFullYear()} {BUSINESS.name} All rights reserved.
+          </span>
+          <span>Locally owned and operated in {BUSINESS.region}</span>
         </div>
       </div>
     </footer>

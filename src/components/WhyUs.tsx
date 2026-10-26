@@ -1,5 +1,6 @@
 import { LogoMark } from "./Logo";
 import { IconShield, IconTag, IconUsers, IconWindow } from "./Icons";
+import { BUSINESS } from "../content";
 
 const REASONS = [
   {
@@ -30,9 +31,9 @@ export function WhyUs() {
       <div className="wrap why">
         <div className="why__intro">
           <p className="eyebrow">Why Pav's</p>
-          <h2 className="silver">A local business that sweats the details.</h2>
+          <h2>A local business that sweats the details.</h2>
           <p className="lead">Big franchises send whoever is on shift. With Pav's, you get the owner, every time.</p>
-          <figure className="owner-note panel">
+          <figure className="owner-note card">
             <blockquote>
               <p>
                 "I'm Michael Pavlisak, and I own and run Pav's Window Co. I'm on every job myself, so you get
@@ -42,8 +43,8 @@ export function WhyUs() {
             <figcaption className="owner-note__sig">
               <LogoMark className="owner-note__mark" />
               <span>
-                <span className="owner-note__name">Michael Pavlisak</span>
-                <span className="owner-note__role">Owner, Pav's Window Co.</span>
+                <span className="owner-note__name">{BUSINESS.owner}</span>
+                <span className="owner-note__role">Owner, {BUSINESS.name}</span>
               </span>
             </figcaption>
           </figure>
@@ -53,7 +54,7 @@ export function WhyUs() {
           {REASONS.map((r) => {
             const Icon = r.icon;
             return (
-              <li className="reason panel" key={r.title}>
+              <li className="reason card" key={r.title}>
                 <span className="badge-icon">
                   <Icon />
                 </span>

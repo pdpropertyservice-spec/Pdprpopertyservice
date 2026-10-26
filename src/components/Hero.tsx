@@ -1,50 +1,37 @@
-import { QuoteForm } from "./QuoteForm";
-import { IconCheck, IconPhone } from "./Icons";
-import { PHONE } from "../content";
+import { QuickQuote } from "./QuoteForm";
+import { WindowVisual } from "./WindowVisual";
+import { IconCheck } from "./Icons";
+import { BUSINESS } from "../content";
 
 export function Hero() {
   return (
     <section className="hero" id="top">
-      <div className="hero__glass" aria-hidden="true" />
       <div className="wrap hero__grid">
         <div className="hero__copy">
-          <p className="eyebrow">Broome County, NY</p>
-          <h1 className="silver">
-            Crystal-clear windows for <span className="emerald">homes &amp; storefronts.</span>
+          <p className="eyebrow">Window cleaning · {BUSINESS.region}</p>
+          <h1>
+            Let the light <span className="accent">back in.</span>
           </h1>
           <p className="hero__lede">
-            Pav's Window Co. is a locally owned window cleaning company serving Binghamton, Vestal, Endicott,
-            Johnson City and the rest of Broome County. Every pane is cleaned edge to edge, inside and out, and
-            backed by a satisfaction guarantee.
+            Streak-free window cleaning for homes and storefronts in Binghamton, Vestal, Endicott, Johnson City
+            and across Broome County. Michael, the owner, is on every job.
           </p>
+          <QuickQuote />
           <ul className="hero__assure">
             <li>
-              <IconCheck /> Free quotes, usually within 24 hours
+              <IconCheck /> Free quotes within 24 hours
             </li>
             <li>
-              <IconCheck /> Owner on every job
+              <IconCheck /> Flat-rate pricing
             </li>
             <li>
-              <IconCheck /> Not happy with a spot? We re-clean it free
+              <IconCheck /> Any missed spot re-cleaned free
             </li>
           </ul>
-          <a className="hero__call" href={PHONE.href}>
-            <span className="hero__call-icon">
-              <IconPhone />
-            </span>
-            <span>
-              <span className="hero__call-label">Prefer to talk? Call or text</span>
-              <span className="hero__call-number">{PHONE.display}</span>
-            </span>
-          </a>
         </div>
 
-        <div className="hero__card panel">
-          <div className="hero__card-head">
-            <h2>Get a free quote</h2>
-            <p>Takes about 30 seconds.</p>
-          </div>
-          <QuoteForm compact idPrefix="hq" />
+        <div className="hero__visual">
+          <WindowVisual />
         </div>
       </div>
     </section>

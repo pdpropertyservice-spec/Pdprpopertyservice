@@ -6,6 +6,7 @@ export const BUSINESS = {
   phone: { display: "(607) 759-8829", href: "tel:+16077598829" },
   formspreeId: "xojzondl",
   towns: ["Binghamton", "Vestal", "Endicott", "Johnson City"],
+  region: "Broome County, NY",
 } as const;
 
 export const PHONE = BUSINESS.phone;

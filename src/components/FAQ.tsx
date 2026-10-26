@@ -34,11 +34,11 @@ const FAQS = [
 
 export function FAQ() {
   return (
-    <section className="section section--alt" id="faq">
+    <section className="section" id="faq">
       <div className="wrap faq">
         <div className="faq__intro">
           <p className="eyebrow">Questions</p>
-          <h2 className="silver">Common questions</h2>
+          <h2>Common questions</h2>
           <p className="lead">Have a question that isn't here? Happy to help.</p>
           <a className="btn btn--ghost" href={PHONE.href}>
             <IconPhone /> Call or text {PHONE.display}

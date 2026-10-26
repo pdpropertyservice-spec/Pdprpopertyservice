@@ -5,7 +5,7 @@ const SERVICES = [
     icon: IconHome,
     kicker: "Residential",
     title: "Home window cleaning",
-    desc: "Clear, streak-free windows for houses of every size, from small homes to large two-story houses.",
+    desc: "Clear, streak-free windows for houses of every size, from small single-story homes to large two-story houses.",
     items: ["Single-story and two-story homes", "Outside only, or inside and outside", "One-time cleans or a regular schedule"],
   },
   {
@@ -18,8 +18,8 @@ const SERVICES = [
 ];
 
 const CLEANS = [
-  { title: "Outside only", desc: "We clean the outside of every window. You don't need to be home." },
-  { title: "Inside & outside", desc: "Both sides of every pane for the clearest view. Our most complete clean." },
+  { title: "Outside only", desc: "We clean the outside of every window. You don't need to be home.", best: false },
+  { title: "Inside & outside", desc: "Both sides of every pane for the clearest view.", best: true },
 ];
 
 const FREQUENCY = [
@@ -41,7 +41,7 @@ export function Services() {
       <div className="wrap">
         <header className="section-head">
           <p className="eyebrow">What we clean</p>
-          <h2 className="silver">Windows are all we do.</h2>
+          <h2>Windows are all we do.</h2>
           <p className="lead">That means every pane gets our full attention, whether it's your home or your storefront.</p>
         </header>
 
@@ -49,7 +49,8 @@ export function Services() {
           {SERVICES.map((s) => {
             const Icon = s.icon;
             return (
-              <article className="svc panel" key={s.title}>
+              <article className="svc card" key={s.title}>
+                <Icon className="svc__art" />
                 <div className="svc__top">
                   <span className="badge-icon">
                     <Icon />
@@ -71,11 +72,12 @@ export function Services() {
         </div>
 
         <div className="choose">
-          <div className="choose__panel panel">
+          <div className="choose__panel card">
             <h3 className="choose__title">Pick your clean</h3>
             <div className="choose__opts">
               {CLEANS.map((c) => (
-                <div className="opt" key={c.title}>
+                <div className={c.best ? "opt opt--best" : "opt"} key={c.title}>
+                  {c.best && <span className="opt__tag">Most complete</span>}
                   <strong>{c.title}</strong>
                   <span>{c.desc}</span>
                 </div>
@@ -83,7 +85,7 @@ export function Services() {
             </div>
             <p className="choose__note">Not sure which you need? We'll help you decide when we quote.</p>
           </div>
-          <div className="choose__panel panel">
+          <div className="choose__panel card">
             <h3 className="choose__title">Pick how often</h3>
             <ul className="freq">
               {FREQUENCY.map((f) => {
