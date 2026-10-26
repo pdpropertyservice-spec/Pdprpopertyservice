@@ -8,7 +8,7 @@ export function QuoteSection() {
       <div className="wrap quote__grid">
         <div className="quote__intro">
           <p className="eyebrow">Free quote</p>
-          <h2 className="silver">Get your free window cleaning quote</h2>
+          <h2>Get your free window cleaning quote</h2>
           <p className="lead">
             Tell us a little about your windows and you'll get a flat-rate price, usually within 24 hours. No pressure
             and no obligation.

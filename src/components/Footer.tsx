@@ -9,7 +9,7 @@ export function Footer() {
       <div className="wrap">
         <div className="footer__grid">
           <div className="footer__brand">
-            <Logo tone="night" />
+            <Logo variant="footer" />
             <p>Window cleaning for homes and storefronts in {BUSINESS.region}.</p>
             <p className="footer__owner">Owned and operated by {BUSINESS.owner}.</p>
           </div>

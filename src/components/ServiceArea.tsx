@@ -15,12 +15,12 @@ function AreaMap() {
       <svg viewBox="0 0 400 376">
         <defs>
           <linearGradient id="river" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0" stopColor="#9fcdeb" />
-            <stop offset="1" stopColor="#cfe6f7" />
+            <stop offset="0" stopColor="#4f6772" />
+            <stop offset="1" stopColor="#a9b8c0" />
           </linearGradient>
         </defs>
-        <circle cx="200" cy="190" r="150" fill="none" stroke="#0f9a66" strokeWidth="1.5" strokeDasharray="6 7" opacity="0.6" />
-        <circle cx="200" cy="190" r="104" fill="none" stroke="#0f9a66" strokeWidth="1" strokeDasharray="3 6" opacity="0.35" />
+        <circle cx="200" cy="190" r="150" fill="none" stroke="#47cd69" strokeWidth="1.5" strokeDasharray="6 7" opacity="0.6" />
+        <circle cx="200" cy="190" r="104" fill="none" stroke="#47cd69" strokeWidth="1" strokeDasharray="3 6" opacity="0.35" />
         <path
           d="M20 210c50-10 70-50 120-44s70 36 120 22 60-22 120-30"
           fill="none"
@@ -31,7 +31,7 @@ function AreaMap() {
         <path
           d="M20 210c50-10 70-50 120-44s70 36 120 22 60-22 120-30"
           fill="none"
-          stroke="#fff"
+          stroke="#d4d1d1"
           strokeWidth="3"
           strokeDasharray="1 12"
           strokeLinecap="round"
@@ -39,9 +39,9 @@ function AreaMap() {
         />
         {PINS.map((p) => (
           <g key={p.name} transform={`translate(${p.x} ${p.y})`}>
-            <circle r="18" fill="#0f9a66" opacity="0.14" />
-            <circle r="9" fill="#fff" stroke="#0f9a66" strokeWidth="3" />
-            <circle r="3" fill="#0f9a66" />
+            <circle r="18" fill="#47cd69" opacity="0.14" />
+            <circle r="9" fill="#050806" stroke="#47cd69" strokeWidth="3" />
+            <circle r="3" fill="#47cd69" />
             <text className="map-label" x="0" y={p.above ? -22 : 40} textAnchor="middle">
               {p.name}
             </text>

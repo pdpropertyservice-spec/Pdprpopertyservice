@@ -1,4 +1,3 @@
-import { LogoMark } from "./Logo";
 import { IconShield, IconTag, IconUsers, IconWindow } from "./Icons";
 import { BUSINESS } from "../content";
 
@@ -41,7 +40,7 @@ export function WhyUs() {
               </p>
             </blockquote>
             <figcaption className="owner-note__sig">
-              <LogoMark className="owner-note__mark" />
+              <img className="owner-note__mark" src="/images/mark.webp" width={46} height={46} alt="" />
               <span>
                 <span className="owner-note__name">{BUSINESS.owner}</span>
                 <span className="owner-note__role">Owner, {BUSINESS.name}</span>

@@ -7,6 +7,7 @@ export const BUSINESS = {
   formspreeId: "xojzondl",
   towns: ["Binghamton", "Vestal", "Endicott", "Johnson City"],
   region: "Broome County, NY",
+  tagline: "Clearer views. Brighter days.",
 } as const;
 
 export const PHONE = BUSINESS.phone;

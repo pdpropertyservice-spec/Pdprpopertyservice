@@ -1,16 +1,16 @@
 import { QuickQuote } from "./QuoteForm";
-import { WindowVisual } from "./WindowVisual";
 import { IconCheck } from "./Icons";
 import { BUSINESS } from "../content";
 
 export function Hero() {
   return (
     <section className="hero" id="top">
+      <div className="hero__glass" aria-hidden="true" />
       <div className="wrap hero__grid">
         <div className="hero__copy">
-          <p className="eyebrow">Window cleaning · {BUSINESS.region}</p>
+          <p className="eyebrow">Window cleaning in {BUSINESS.region}</p>
           <h1>
-            Let the light <span className="accent">back in.</span>
+            Clearer views. <span className="accent">Brighter days.</span>
           </h1>
           <p className="hero__lede">
             Streak-free window cleaning for homes and storefronts in Binghamton, Vestal, Endicott, Johnson City
@@ -31,7 +31,14 @@ export function Hero() {
         </div>
 
         <div className="hero__visual">
-          <WindowVisual />
+          <img
+            className="hero__logo"
+            src="/images/logo.webp"
+            width={1400}
+            height={672}
+            alt="Pav's Window Co. Clearer views. Brighter days."
+            fetchPriority="high"
+          />
         </div>
       </div>
     </section>

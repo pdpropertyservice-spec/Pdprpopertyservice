@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
-<defs><linearGradient id="mk-night-silver" x1="0" y1="0" x2="0.4" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="0.35" stop-color="#DEE4E7"/><stop offset="0.7" stop-color="#A9B5BB"/><stop offset="1" stop-color="#E2E7EA"/></linearGradient>
-<linearGradient id="mk-night-glass" x1="0" y1="0" x2="0.4" y2="1"><stop offset="0" stop-color="#F2F5F6"/><stop offset="0.5" stop-color="#C9D2D6"/><stop offset="1" stop-color="#E6EBED"/></linearGradient>
-<linearGradient id="mk-night-green" x1="0" y1="0" x2="0.3" y2="1"><stop offset="0" stop-color="#14503A"/><stop offset="0.6" stop-color="#0B3D2A"/><stop offset="1" stop-color="#06271B"/></linearGradient></defs>
-<path d="M26 10.5H74A15.5 15.5 0 0 1 89.5 26V74A15.5 15.5 0 0 1 74 89.5H26A15.5 15.5 0 0 1 10.5 74V26A15.5 15.5 0 0 1 26 10.5Z" fill="url(#mk-night-green)"/>
-<path d="M20.5 38L38 20.5" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round" opacity="0.55"/>
-<path d="M46.5 10.5h7v79h-7ZM10.5 46.5h79v7h-79Z" fill="url(#mk-night-silver)"/>
-<path d="M26 6H74A20 20 0 0 1 94 26V74A20 20 0 0 1 74 94H26A20 20 0 0 1 6 74V26A20 20 0 0 1 26 6ZM26 15H74A11 11 0 0 1 85 26V74A11 11 0 0 1 74 85H26A11 11 0 0 1 15 74V26A11 11 0 0 1 26 15Z" fill-rule="evenodd" fill="url(#mk-night-silver)"/>
-</svg>
