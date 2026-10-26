@@ -1,4 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
-
-<g fill="#000000"><path fill-rule="evenodd" d="M10 6H58A29 29 0 0 1 58 64H34V94H10ZM39 17H70A5 5 0 0 1 75 22V48A5 5 0 0 1 70 53H39A5 5 0 0 1 34 48V22A5 5 0 0 1 39 17Z"/><path d="M52.9 17h3.2v36h-3.2ZM34 33.4h41v3.2h-41Z"/><path d="M89 -0.5C90.881 6.91 91.09 7.119 98.5 9C91.09 10.881 90.881 11.09 89 18.5C87.119 11.09 86.91 10.881 79.5 9C86.91 7.119 87.119 6.91 89 -0.5ZM76 14.8C76.8316 18.076 76.924 18.1684 80.2 19C76.924 19.8316 76.8316 19.924 76 23.2C75.1684 19.924 75.076 19.8316 71.8 19C75.076 18.1684 75.1684 18.076 76 14.8Z"/></g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 220" width="200" height="220">
+<defs><clipPath id="mk-mono-black-c"><path d="M34 14H166A12 12 0 0 1 178 26V118C178 162 146 193 100 208C54 193 22 162 22 118V26A12 12 0 0 1 34 14Z"/></clipPath></defs>
+<mask id="mk-mono-black-m"><rect width="200" height="220" fill="#fff"/><g transform="translate(100 85) rotate(-15.11)"><rect x="-12" y="-62" width="24" height="62" rx="10" fill="#000"/></g></mask>
+<g clip-path="url(#mk-mono-black-c)" fill="#000000">
+  <path d="M0 107L200 53L200 0L0 0Z" mask="url(#mk-mono-black-m)"/>
+  <g transform="translate(100 85) rotate(-15.11)"><rect x="-70" y="-2" width="140" height="10" rx="3"/><rect x="-8" y="-58" width="16" height="54" rx="6"/></g>
+  
+</g>
+<path d="M34 14H166A12 12 0 0 1 178 26V118C178 162 146 193 100 208C54 193 22 162 22 118V26A12 12 0 0 1 34 14Z" fill="none" stroke="#000000" stroke-width="7"/>
 </svg>
