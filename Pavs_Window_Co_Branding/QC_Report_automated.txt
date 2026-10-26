@@ -1,0 +1,77 @@
+QC REPORT - Pav’s Window Co. branding files
+============================================================
+
+## 01_Premium_Vector/Pavs_Window_Co_Premium.svg (47.1 KB)
+  XML well-formed: PASS
+  elements: {'svg': 1, 'title': 1, 'desc': 1, 'defs': 1, 'linearGradient': 25, 'stop': 95, 'radialGradient': 1, 'clipPath': 20, 'path': 115, 'g': 22, 'rect': 35, 'ellipse': 6, 'circle': 12}
+  embedded raster (<image>/data: URI):  none - PASS
+  live <text>/<font> elements (all lettering is outlined paths): none - PASS
+  external references (href/url(http)): none - PASS
+  filters/masks/blend effects (flatten-safe): none - PASS
+  gradients: 26
+  total path subpaths: 166  path nodes approx: 597
+
+## 02_Simplified_Decal_Sign_Uniform/Pavs_Window_Co_Simplified.svg (20.0 KB)
+  XML well-formed: PASS
+  elements: {'svg': 1, 'title': 1, 'desc': 1, 'path': 30, 'ellipse': 1, 'circle': 3}
+  embedded raster (<image>/data: URI):  none - PASS
+  live <text>/<font> elements (all lettering is outlined paths): none - PASS
+  external references (href/url(http)): none - PASS
+  filters/masks/blend effects (flatten-safe): none - PASS
+  distinct solid colours used: 3 ['#000000', '#1b7a3a', '#c3c6c9'] (+ no gradients)
+  total path subpaths: 76  path nodes approx: 215
+
+## 03_Embroidery_Artwork/Pavs_Window_Co_Embroidery_NoSlogan.svg (10.2 KB)
+  XML well-formed: PASS
+  elements: {'svg': 1, 'title': 1, 'desc': 1, 'path': 26, 'ellipse': 1, 'circle': 1}
+  embedded raster (<image>/data: URI):  none - PASS
+  live <text>/<font> elements (all lettering is outlined paths): none - PASS
+  external references (href/url(http)): none - PASS
+  filters/masks/blend effects (flatten-safe): none - PASS
+  distinct solid colours used: 3 ['#000000', '#1b7a3a', '#c3c6c9'] (+ no gradients)
+  total path subpaths: 41  path nodes approx: 167
+
+## 04_Social_Media/Pavs_Window_Co_Social_Square.svg (11.0 KB)
+  XML well-formed: PASS
+  elements: {'svg': 1, 'title': 1, 'desc': 1, 'rect': 1, 'g': 1, 'path': 24, 'ellipse': 1, 'circle': 1}
+  embedded raster (<image>/data: URI):  none - PASS
+  live <text>/<font> elements (all lettering is outlined paths): none - PASS
+  external references (href/url(http)): none - PASS
+  filters/masks/blend effects (flatten-safe): none - PASS
+  distinct solid colours used: 4 ['#000000', '#0e4a29', '#1b7a3a', '#c3c6c9'] (+ no gradients)
+  total path subpaths: 39  path nodes approx: 151
+
+## 04_Social_Media/Pavs_Window_Co_Social_Square_Transparent.svg (11.0 KB)
+  XML well-formed: PASS
+  elements: {'svg': 1, 'title': 1, 'desc': 1, 'g': 1, 'path': 24, 'ellipse': 1, 'circle': 1}
+  embedded raster (<image>/data: URI):  none - PASS
+  live <text>/<font> elements (all lettering is outlined paths): none - PASS
+  external references (href/url(http)): none - PASS
+  filters/masks/blend effects (flatten-safe): none - PASS
+  distinct solid colours used: 3 ['#000000', '#1b7a3a', '#c3c6c9'] (+ no gradients)
+  total path subpaths: 39  path nodes approx: 151
+
+============================================================
+PNG / transparency checks
+01_Premium_Vector/Pavs_Window_Co_Premium.png: 4000x1950px RGBA, corner alpha=[np.uint8(0), np.uint8(0), np.uint8(0), np.uint8(0)], fully-transparent area=27.2%, separate opaque islands=1 PASS
+02_Simplified_Decal_Sign_Uniform/Pavs_Window_Co_Simplified.png: 4000x1954px RGBA, corner alpha=[np.uint8(0), np.uint8(0), np.uint8(0), np.uint8(0)], fully-transparent area=27.2%, separate opaque islands=1 PASS
+03_Embroidery_Artwork/Pavs_Window_Co_Embroidery_NoSlogan.png: 3000x1367px RGBA, corner alpha=[np.uint8(0), np.uint8(0), np.uint8(0), np.uint8(0)], fully-transparent area=28.4%, separate opaque islands=1 PASS
+03_Embroidery_Artwork/Pavs_Window_Co_Embroidery_NoSlogan_1050px.png: 1050x478px RGBA, corner alpha=[np.uint8(0), np.uint8(0), np.uint8(0), np.uint8(0)], fully-transparent area=28.2%, separate opaque islands=1 PASS
+04_Social_Media/Pavs_Window_Co_Social_Square.png opaque by design (solid brand-green background version, no alpha) - OK
+04_Social_Media/Pavs_Window_Co_Social_Square_400px.png opaque by design (solid brand-green background version, no alpha) - OK
+04_Social_Media/Pavs_Window_Co_Social_Square_Transparent.png: 1024x1024px RGBA, corner alpha=[np.uint8(0), np.uint8(0), np.uint8(0), np.uint8(0)], fully-transparent area=70.2%, separate opaque islands=1 PASS
+QC/00_original_reference_supplied.png: 1774x887px RGBA, corner alpha=[np.uint8(0), np.uint8(0), np.uint8(0), np.uint8(0)], fully-transparent area=30.1%, separate opaque islands=7 PASS
+    islands (area px, bbox): [(1081777, (6, 17, 1760, 836)), (4865, (1644, 538, 65, 134)), (2, (1691, 492, 1, 2)), (1, (1644, 467, 1, 1)), (1, (1591, 507, 1, 1)), (1, (1567, 701, 1, 1))]
+QC/01_reference_vs_premium.png opaque by design (solid brand-green background version, no alpha) - OK
+QC/02_reference_vs_simplified_vs_embroidery.png opaque by design (solid brand-green background version, no alpha) - OK
+QC/03_social_sizes_square_and_circle_crop.png opaque by design (solid brand-green background version, no alpha) - OK
+QC/04_embroidery_actual_size_3.5in_at_300dpi.png opaque by design (solid brand-green background version, no alpha) - OK
+QC/05_embroidery_thin_feature_map.png opaque by design (solid brand-green background version, no alpha) - OK
+
+============================================================
+PDF checks
+01_Premium_Vector/Pavs_Window_Co_Premium.pdf: pages=1, size=12.00x5.86 in, raster images=0, fonts=0, vector drawings=90, corner alpha=[0, 0, 0, 0]
+02_Simplified_Decal_Sign_Uniform/Pavs_Window_Co_Simplified.pdf: pages=1, size=12.00x5.86 in, raster images=0, fonts=0, vector drawings=59, corner alpha=[0, 0, 0, 0]
+03_Embroidery_Artwork/Pavs_Window_Co_Embroidery_NoSlogan.pdf: pages=1, size=3.50x1.60 in, raster images=0, fonts=0, vector drawings=29, corner alpha=[0, 0, 0, 0]
+04_Social_Media/Pavs_Window_Co_Social_Square.pdf: pages=1, size=4.00x4.00 in, raster images=0, fonts=0, vector drawings=46, corner alpha=[255, 255, 255, 255]
+04_Social_Media/Pavs_Window_Co_Social_Square_Transparent.pdf: pages=1, size=4.00x4.00 in, raster images=0, fonts=0, vector drawings=45, corner alpha=[0, 0, 0, 0]
