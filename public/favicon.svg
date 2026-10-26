@@ -1,7 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="12" fill="#05080c"/>
-  <rect x="9" y="9" width="46" height="46" rx="8" fill="#1e8bc6"/>
-  <rect x="9" y="9" width="46" height="46" rx="8" fill="none" stroke="#e3e8ea" stroke-width="4"/>
-  <path d="M32 11v42M11 32h42" stroke="#e3e8ea" stroke-width="3.5"/>
-  <path d="M15 25l9-9M15 19l3-3" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
+  <defs>
+    <linearGradient id="p" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#9BD3F4"/>
+      <stop offset="1" stop-color="#1B78BE"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="37" height="37" rx="8" fill="#0E2133"/>
+  <rect x="6" y="6" width="12.5" height="12.5" rx="2.5" fill="url(#p)"/>
+  <rect x="21.5" y="6" width="12.5" height="12.5" rx="2.5" fill="url(#p)"/>
+  <rect x="6" y="21.5" width="12.5" height="12.5" rx="2.5" fill="url(#p)"/>
+  <rect x="21.5" y="21.5" width="12.5" height="12.5" rx="2.5" fill="url(#p)"/>
+  <path d="M9 15 15 9M9 10.6 10.6 9" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round"/>
 </svg>

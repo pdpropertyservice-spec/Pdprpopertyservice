@@ -1,88 +1,210 @@
-import { SectionHeading } from "./Primitives";
-import { IconWindow, IconStore, IconSqueegee, IconRepeat, IconArrow } from "./Icons";
+import { IconCalendar, IconCheck, IconCheckCircle, IconRepeat, IconWindow } from "./Icons";
 
-const SERVICES = [
-  {
-    icon: IconWindow,
-    title: "Residential Windows",
-    tag: "Most popular",
-    featured: true,
-    desc: "Spotless glass for homes of every size—from townhouses to large two-story houses—with detailed edges and a streak-free finish.",
-    items: ["Single & two-story homes", "Outside-only or inside & out", "Free, no-obligation quotes"],
-  },
-  {
-    icon: IconStore,
-    title: "Storefront & Commercial",
-    desc: "Clean, clear glass that makes a great first impression on your customers, with reliable recurring options.",
-    items: ["Storefront glass & doors", "Commercial facilities", "Recurring route options"],
-  },
-  {
-    icon: IconSqueegee,
-    title: "Inside & Outside Detail",
-    desc: "Both sides of every pane cleaned, so your view is clear no matter which side you're looking from.",
-    items: ["Both sides of the glass", "Detailed edges", "Satisfaction guaranteed"],
-  },
-  {
-    icon: IconRepeat,
-    title: "Recurring Service",
-    desc: "Set it and forget it. Regular routes keep your windows clear all year without you having to think about it.",
-    items: ["Bi-weekly routes", "Monthly routes", "Homes & storefronts"],
-  },
+const INK = "#0E2133";
+const NAVY = "#16324A";
+const GLASS = "#BFE2F7";
+const AMBER = "#F4B63F";
+
+/** A window: frame, glass, cross bars and a shine line. */
+function Pane({ x, y, w, h }: { x: number; y: number; w: number; h: number }) {
+  return (
+    <g>
+      <rect x={x} y={y} width={w} height={h} rx="2" fill={GLASS} stroke={NAVY} strokeWidth="3" />
+      <path d={`M${x + w / 2} ${y} V${y + h} M${x} ${y + h / 2} H${x + w}`} stroke={NAVY} strokeWidth="2.5" />
+      <path
+        d={`M${x + 5} ${y + h / 2 - 5} L${x + w / 2 - 5} ${y + 5}`}
+        stroke="#FFFFFF"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        opacity="0.9"
+      />
+    </g>
+  );
+}
+
+function Sparkle({ x, y, s = 1 }: { x: number; y: number; s?: number }) {
+  return (
+    <path
+      transform={`translate(${x} ${y}) scale(${s})`}
+      d="M0 -9 C1 -3 3 -1 9 0 C3 1 1 3 0 9 C-1 3 -3 1 -9 0 C-3 -1 -1 -3 0 -9Z"
+      fill={AMBER}
+    />
+  );
+}
+
+function HouseArt() {
+  return (
+    <svg viewBox="0 0 320 190" role="img" aria-label="Illustration of a house with sparkling clean windows">
+      <rect x="0" y="176" width="320" height="14" fill="#CFE3D3" />
+      <rect x="208" y="34" width="20" height="44" fill={NAVY} />
+      <rect x="78" y="84" width="164" height="92" fill="#FFFFFF" stroke="#C3D1DC" strokeWidth="2" />
+      <path d="M64 88 L160 26 L256 88 Z" fill={NAVY} />
+      <rect x="60" y="84" width="200" height="8" rx="2" fill={INK} />
+      <circle cx="160" cy="62" r="11" fill={GLASS} stroke="#FFFFFF" strokeWidth="3" />
+      <Pane x={94} y={106} w={44} h={40} />
+      <Pane x={182} y={106} w={44} h={40} />
+      <rect x="143" y="120" width="34" height="56" rx="2" fill={AMBER} />
+      <circle cx="170" cy="150" r="2.5" fill={INK} />
+      <ellipse cx="56" cy="174" rx="32" ry="15" fill="#7FAE8E" />
+      <ellipse cx="268" cy="174" rx="30" ry="14" fill="#7FAE8E" />
+      <Sparkle x={86} y={104} />
+      <Sparkle x={236} y={142} s={0.75} />
+      <Sparkle x={176} y={56} s={0.6} />
+    </svg>
+  );
+}
+
+function StorefrontArt() {
+  const stripes = Array.from({ length: 11 }, (_, i) => i);
+  return (
+    <svg viewBox="0 0 320 190" role="img" aria-label="Illustration of a storefront with sparkling clean glass">
+      <rect x="0" y="176" width="320" height="14" fill="#DCE5EC" />
+      <rect x="44" y="22" width="232" height="154" fill="#FFFFFF" stroke="#C3D1DC" strokeWidth="2" />
+      <rect x="40" y="18" width="240" height="12" rx="2" fill={INK} />
+      <Pane x={68} y={42} w={48} h={32} />
+      <Pane x={136} y={42} w={48} h={32} />
+      <Pane x={204} y={42} w={48} h={32} />
+      <rect x="62" y="86" width="196" height="14" rx="3" fill={NAVY} />
+      {stripes.map((i) => (
+        <rect key={i} x={52 + i * 20} y="104" width="20" height="16" fill={i % 2 ? "#FCE6B0" : AMBER} />
+      ))}
+      <path
+        d={`M52 120 ${stripes.map(() => "q 10 10 20 0").join(" ")}`}
+        fill={AMBER}
+        stroke={AMBER}
+        strokeWidth="1"
+      />
+      <rect x="58" y="134" width="80" height="42" fill={GLASS} stroke={NAVY} strokeWidth="3" />
+      <rect x="182" y="134" width="80" height="42" fill={GLASS} stroke={NAVY} strokeWidth="3" />
+      <rect x="146" y="134" width="28" height="42" fill={GLASS} stroke={NAVY} strokeWidth="3" />
+      <rect x="166" y="150" width="3" height="12" rx="1.5" fill={NAVY} />
+      <path d="M66 166 L92 140 M78 168 L100 146" stroke="#FFFFFF" strokeWidth="3" strokeLinecap="round" opacity="0.9" />
+      <path d="M190 166 L216 140 M202 168 L224 146" stroke="#FFFFFF" strokeWidth="3" strokeLinecap="round" opacity="0.9" />
+      <Sparkle x={130} y={140} />
+      <Sparkle x={256} y={168} s={0.75} />
+    </svg>
+  );
+}
+
+const CLEANS = [
+  { title: "Outside only", desc: "We clean the outside of every window. You don't need to be home." },
+  { title: "Inside & outside", desc: "Both sides of every pane for the clearest view. Our most complete clean." },
+];
+
+const FREQUENCY = [
+  { icon: IconCalendar, title: "One-time clean", desc: "A seasonal refresh, or before guests arrive" },
+  { icon: IconRepeat, title: "Every two weeks", desc: "Popular with storefronts" },
+  { icon: IconWindow, title: "Once a month", desc: "Keeps your glass clear all year" },
+];
+
+const INCLUDED = [
+  "Every pane cleaned edge to edge",
+  "Corners and edges detailed",
+  "Drips wiped from frames and sills",
+  "Streak-free, or we re-clean it free",
 ];
 
 export function Services() {
   return (
-    <section id="services" className="relative py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <SectionHeading
-          eyebrow="What we do"
-          title="Window cleaning,"
-          highlight="done right"
-          subtitle="Windows are all we do at Pav's Window Co.—so every pane gets our full attention, at home or at your storefront."
-        />
+    <section className="section section--white" id="services">
+      <div className="wrap">
+        <header className="section-head">
+          <p className="eyebrow">What we clean</p>
+          <h2>Windows are all we do.</h2>
+          <p className="lead">
+            That means every pane gets our full attention, whether it's your home or your storefront.
+          </p>
+        </header>
 
-        <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-          {SERVICES.map((s, i) => {
-            const Icon = s.icon;
-            return (
-              <article
-                key={s.title}
-                data-delay={`${i * 100}`}
-                className={`reveal group relative flex flex-col overflow-hidden rounded-2xl border p-6 transition-all duration-500 hover:-translate-y-1.5 ${
-                  s.featured
-                    ? "border-forest-400/40 bg-gradient-to-b from-forest-600/15 to-transparent lg:row-span-1"
-                    : "border-white/10 bg-white/[0.02] hover:border-white/20"
-                }`}
-              >
-                <div className="pointer-events-none absolute -right-8 -top-8 h-28 w-28 rounded-full bg-forest-500/10 blur-2xl transition-opacity duration-500 group-hover:opacity-100 opacity-0" />
-                {s.tag && (
-                  <span className="absolute right-4 top-4 rounded-full bg-forest-500/20 px-2.5 py-1 text-[0.6rem] font-bold uppercase tracking-wider text-forest-300">
-                    {s.tag}
-                  </span>
-                )}
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-forest-500/30 to-forest-800/30 text-forest-300 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3">
-                  <Icon className="h-6 w-6" />
+        <div className="svc-grid">
+          <article className="svc">
+            <div className="svc__art">
+              <HouseArt />
+            </div>
+            <div className="svc__body">
+              <p className="svc__kicker">Residential</p>
+              <h3>Home window cleaning</h3>
+              <p>Clear, streak-free windows for houses of every size, from small homes to large two-story houses.</p>
+              <ul className="checks">
+                <li>
+                  <IconCheck /> Single-story and two-story homes
+                </li>
+                <li>
+                  <IconCheck /> Outside only, or inside and outside
+                </li>
+                <li>
+                  <IconCheck /> One-time cleans or a regular schedule
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <article className="svc">
+            <div className="svc__art">
+              <StorefrontArt />
+            </div>
+            <div className="svc__body">
+              <p className="svc__kicker">Commercial</p>
+              <h3>Storefront &amp; business windows</h3>
+              <p>Clean glass makes a great first impression. We keep storefronts and business windows looking sharp.</p>
+              <ul className="checks">
+                <li>
+                  <IconCheck /> Storefront windows and glass doors
+                </li>
+                <li>
+                  <IconCheck /> Offices and commercial buildings
+                </li>
+                <li>
+                  <IconCheck /> Regular cleanings every two weeks or monthly
+                </li>
+              </ul>
+            </div>
+          </article>
+        </div>
+
+        <div className="choose">
+          <div className="choose__panel">
+            <h3 className="choose__title">Pick your clean</h3>
+            <div className="choose__opts choose__opts--2">
+              {CLEANS.map((c) => (
+                <div className="opt" key={c.title}>
+                  <strong>{c.title}</strong>
+                  <span>{c.desc}</span>
                 </div>
-                <h3 className="mt-5 text-xl font-bold text-white">{s.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-silver-400">{s.desc}</p>
-                <ul className="mt-4 space-y-2">
-                  {s.items.map((it) => (
-                    <li key={it} className="flex items-center gap-2 text-sm text-silver-300">
-                      <span className="h-1.5 w-1.5 rounded-full bg-forest-400" />
-                      {it}
-                    </li>
-                  ))}
-                </ul>
-                <a
-                  href="#quote"
-                  className="mt-auto flex items-center gap-1.5 pt-5 text-sm font-semibold text-forest-300 transition-colors hover:text-forest-200"
-                >
-                  Request this service
-                  <IconArrow className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </a>
-              </article>
-            );
-          })}
+              ))}
+            </div>
+            <p className="choose__note">Not sure which you need? We'll help you decide when we quote.</p>
+          </div>
+          <div className="choose__panel">
+            <h3 className="choose__title">Pick how often</h3>
+            <ul className="freq">
+              {FREQUENCY.map((f) => {
+                const Icon = f.icon;
+                return (
+                  <li key={f.title}>
+                    <span className="freq__icon">
+                      <Icon />
+                    </span>
+                    <span>
+                      <strong>{f.title}</strong>
+                      <span>{f.desc}</span>
+                    </span>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        </div>
+
+        <div className="included">
+          <h3>Every clean includes</h3>
+          <ul>
+            {INCLUDED.map((t) => (
+              <li key={t}>
+                <IconCheckCircle /> {t}
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>

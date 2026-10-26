@@ -1,30 +1,32 @@
-import { useReveal } from "./hooks/useReveal";
-import { Navbar } from "./components/Navbar";
+import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
-import { SocialProof } from "./components/SocialProof";
 import { Services } from "./components/Services";
 import { Process } from "./components/Process";
-import { Benefits } from "./components/Benefits";
+import { WhyUs } from "./components/WhyUs";
+import { ServiceArea } from "./components/ServiceArea";
 import { FAQ } from "./components/FAQ";
-import { CTA } from "./components/CTA";
+import { Quote } from "./components/Quote";
 import { Footer } from "./components/Footer";
+import { MobileBar } from "./components/MobileBar";
 
 export default function App() {
-  useReveal();
-
   return (
-    <div className="relative min-h-screen bg-ink-950 text-silver-200 antialiased">
-      <Navbar />
-      <main>
+    <>
+      <a className="skip-link" href="#main">
+        Skip to content
+      </a>
+      <Header />
+      <main id="main">
         <Hero />
-        <SocialProof />
         <Services />
         <Process />
-        <Benefits />
+        <WhyUs />
+        <ServiceArea />
         <FAQ />
-        <CTA />
+        <Quote />
       </main>
       <Footer />
-    </div>
+      <MobileBar />
+    </>
   );
 }
