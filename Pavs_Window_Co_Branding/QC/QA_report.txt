@@ -1,0 +1,129 @@
+FINAL QA REPORT - Pav’s Window Co. branding (refinement pass)
+========================================================================
+
+[1] SVG STRUCTURE (each file parsed as XML and rendered in Chromium)
+
+## 01_Premium_Vector/Pavs_Window_Co_Premium.svg (68.4 KB)
+  elements: {'svg': 1, 'title': 1, 'desc': 1, 'defs': 1, 'linearGradient': 27, 'stop': 201, 'radialGradient': 1, 'pattern': 4, 'path': 147, 'clipPath': 20, 'g': 21, 'rect': 35, 'circle': 12, 'ellipse': 4}
+  embedded raster (<image>, data: URI): none  PASS
+  live text elements (lettering is outlined paths): none  PASS
+  external refs / filters / masks: none  PASS
+  gradients: 28 patterns: 4
+  path data: 147 paths, 216 subpaths, 901 segments
+
+## 02_Simplified_Decal_Sign_Uniform/Pavs_Window_Co_Simplified.svg (21.9 KB)
+  elements: {'svg': 1, 'title': 1, 'desc': 1, 'path': 31, 'circle': 3}
+  embedded raster (<image>, data: URI): none  PASS
+  live text elements (lettering is outlined paths): none  PASS
+  external refs / filters / masks: none  PASS
+  distinct colours: 3 ['#000000', '#166a35', '#c3c6c9'] | gradients/patterns: 0
+  path data: 31 paths, 79 subpaths, 265 segments
+
+## 03_Embroidery_Artwork/Pavs_Window_Co_Embroidery_NoSlogan.svg (8.8 KB)
+  elements: {'svg': 1, 'title': 1, 'desc': 1, 'path': 16, 'circle': 1}
+  embedded raster (<image>, data: URI): none  PASS
+  live text elements (lettering is outlined paths): none  PASS
+  external refs / filters / masks: none  PASS
+  distinct colours: 3 ['#000000', '#166a35', '#c3c6c9'] | gradients/patterns: 0
+  path data: 16 paths, 30 subpaths, 150 segments
+
+## 04_Social_Media/Pavs_Window_Co_Social_Icon.svg (2.4 KB)
+  elements: {'svg': 1, 'title': 1, 'desc': 1, 'rect': 1, 'g': 1, 'path': 4}
+  embedded raster (<image>, data: URI): none  PASS
+  live text elements (lettering is outlined paths): none  PASS
+  external refs / filters / masks: none  PASS
+  distinct colours: 3 ['#0a0c0b', '#1e8b46', '#c3c6c9'] | gradients/patterns: 0
+  path data: 4 paths, 4 subpaths, 43 segments
+
+## 04_Social_Media/Pavs_Window_Co_Social_Icon_Transparent.svg (3.1 KB)
+  elements: {'svg': 1, 'title': 1, 'desc': 1, 'g': 1, 'path': 5}
+  embedded raster (<image>, data: URI): none  PASS
+  live text elements (lettering is outlined paths): none  PASS
+  external refs / filters / masks: none  PASS
+  distinct colours: 2 ['#1e8b46', '#c3c6c9'] | gradients/patterns: 0
+  path data: 5 paths, 5 subpaths, 63 segments
+
+========================================================================
+[2] PNG TRANSPARENCY / ALPHA
+01_Premium_Vector/Pavs_Window_Co_Premium.png: 4000x1949 RGBA | transparent 29.3% antialiased-edge 0.23% opaque 70.4% | max alpha on outer border = 0 (no clipping) | opaque islands: 1
+02_Simplified_Decal_Sign_Uniform/Pavs_Window_Co_Simplified.png: 4000x1943 RGBA | transparent 29.5% antialiased-edge 0.23% opaque 70.3% | max alpha on outer border = 0 (no clipping) | opaque islands: 1
+03_Embroidery_Artwork/Pavs_Window_Co_Embroidery_NoSlogan.png: 3000x1369 RGBA | transparent 28.2% antialiased-edge 0.15% opaque 71.7% | max alpha on outer border = 0 (no clipping) | opaque islands: 1
+03_Embroidery_Artwork/Pavs_Window_Co_Embroidery_NoSlogan_1050px.png: 1050x479 RGBA | transparent 28.0% antialiased-edge 0.57% opaque 71.5% | max alpha on outer border = 0 (no clipping) | opaque islands: 1
+04_Social_Media/Pavs_Window_Co_Social_Icon.png -> opaque (no alpha)
+04_Social_Media/Pavs_Window_Co_Social_Icon_128px.png -> opaque (no alpha)
+04_Social_Media/Pavs_Window_Co_Social_Icon_256px.png -> opaque (no alpha)
+04_Social_Media/Pavs_Window_Co_Social_Icon_48px.png -> opaque (no alpha)
+04_Social_Media/Pavs_Window_Co_Social_Icon_512px.png -> opaque (no alpha)
+04_Social_Media/Pavs_Window_Co_Social_Icon_64px.png -> opaque (no alpha)
+04_Social_Media/Pavs_Window_Co_Social_Icon_Transparent.png: 1024x1024 RGBA | transparent 65.2% antialiased-edge 0.31% opaque 34.5% | max alpha on outer border = 0 (no clipping) | opaque islands: 1
+04_Social_Media/Pavs_Window_Co_Social_Icon_Transparent_128px.png: 128x128 RGBA | transparent 64.4% antialiased-edge 2.19% opaque 33.4% | max alpha on outer border = 0 (no clipping) | opaque islands: 1
+04_Social_Media/Pavs_Window_Co_Social_Icon_Transparent_256px.png: 256x256 RGBA | transparent 64.8% antialiased-edge 1.18% opaque 34.0% | max alpha on outer border = 0 (no clipping) | opaque islands: 1
+04_Social_Media/Pavs_Window_Co_Social_Icon_Transparent_48px.png: 48x48 RGBA | transparent 62.1% antialiased-edge 6.29% opaque 31.6% | max alpha on outer border = 0 (no clipping) | opaque islands: 1
+04_Social_Media/Pavs_Window_Co_Social_Icon_Transparent_512px.png: 512x512 RGBA | transparent 65.1% antialiased-edge 0.59% opaque 34.3% | max alpha on outer border = 0 (no clipping) | opaque islands: 1
+04_Social_Media/Pavs_Window_Co_Social_Icon_Transparent_64px.png: 64x64 RGBA | transparent 62.9% antialiased-edge 4.71% opaque 32.4% | max alpha on outer border = 0 (no clipping) | opaque islands: 1
+QC/00_original_reference_supplied.png: 1774x887 RGBA | transparent 30.1% antialiased-edge 69.78% opaque 0.1% | max alpha on outer border = 2 (ART TOUCHES EDGE) | opaque islands: 7
+QC/01_final_comparison_sheet.png -> opaque (no alpha)
+QC/02_social_icon_size_test_512_256_128_64_48.png -> opaque (no alpha)
+QC/03_simplified_on_black_white_grey_transparent.png -> opaque (no alpha)
+QC/04_embroidery_actual_size_3.5in_at_300dpi.png -> opaque (no alpha)
+
+========================================================================
+[3] PDF CHECKS
+01_Premium_Vector/Pavs_Window_Co_Premium.pdf: 1 page, 12.00x5.85 in, raster images=0, fonts=0, vector drawings=99, corner alpha=[0, 0, 0, 0]
+02_Simplified_Decal_Sign_Uniform/Pavs_Window_Co_Simplified.pdf: 1 page, 12.00x5.83 in, raster images=0, fonts=0, vector drawings=59, corner alpha=[0, 0, 0, 0]
+03_Embroidery_Artwork/Pavs_Window_Co_Embroidery_NoSlogan.pdf: 1 page, 3.50x1.60 in, raster images=0, fonts=0, vector drawings=18, corner alpha=[0, 0, 0, 0]
+04_Social_Media/Pavs_Window_Co_Social_Icon.pdf: 1 page, 4.00x4.00 in, raster images=0, fonts=0, vector drawings=9, corner alpha=[255, 255, 255, 255]
+04_Social_Media/Pavs_Window_Co_Social_Icon_Transparent.pdf: 1 page, 4.00x4.00 in, raster images=0, fonts=0, vector drawings=9, corner alpha=[0, 0, 0, 0]
+
+[4] COMPARISON AGAINST THE APPROVED ORIGINAL (all images aligned to the original artwork bounding box)
+    alpha IoU = overlap of logo silhouettes; colour error = mean |RGB difference| on pixels opaque in both; SSIM = structural similarity on grey (composited on grey)
+    Premium  v1 (previous pass)        alpha IoU 0.949 | colour error  29.5/255 | SSIM 0.618
+    Premium  v2 (this pass)            alpha IoU 0.954 | colour error  24.1/255 | SSIM 0.628
+    Simplified (flat)                  alpha IoU 0.947 | colour error  31.1/255 | SSIM 0.558
+    Embroidery (simplified, no slogan) alpha IoU 0.881 | colour error  32.9/255 | SSIM 0.531
+
+    Layout agreement of flat colour layers with the original silver/green masks (IoU, inside original bounding box):
+    Premium v1   silver IoU 0.905 | green IoU 0.821
+    Simplified   silver IoU 0.878 | green IoU 0.809
+    Premium v2   silver IoU 0.895 | green IoU 0.824
+
+[5] TEXT / SPELLING CHECK (OCR on rendered output + glyph sequence used to build the outlines)
+    Premium     WINDOW CO. line  OCR read: ['wINDow co.']
+    Premium     slogan line      OCR read: ['clearer views. brighter days.']
+    Simplified  WINDOW CO. line  OCR read: ['window co.']
+    Simplified  slogan line      OCR read: ['ClEarER VIEWS. BRIghtER dAys.']
+    Embroidery  WINDOW CO. line  OCR read: []
+    Premium whole-logo OCR tokens: ['CLEARER', 'VIEWS.', 'BRIGHTER', 'DAYS.']
+    glyph sequences used to build outlines -> WINDOW CO.: "WINDOWCO"+"CO"... full run: WINDOW CO. | slogan: "CLEARERVIEWS." + "." and "BRIGHTERDAYS." + "."
+    PAV’S wordmark = geometric outlines P, A, V + apostrophe path + S (verified visually in the zoomed renders; stylised italic letters are not reliably machine-readable).
+
+[6] EMBROIDERY ARTWORK CHECKS (3.5 in wide, 300 dpi render = 1050 px; 1 mm = 11.8 px)
+    forest green #166A35: 14.1% of artwork
+    silver-gray #C3C6C9: 34.9% of artwork
+    black #000000: 49.2% of artwork
+    pixels not within tolerance of the 3 thread colours (anti-aliased edges only): 1.81%
+    SVG colour list is exactly 3 (see [1]); no gradients, patterns, strokes-with-other-colours, or opacity.
+    connected pieces per colour (smallest first; area in mm^2, bbox in px at 300 dpi):
+      forest green #166A35: 7 pieces; smallest 6.87 mm^2 at (847, 416, 74, 22); next [np.float64(8.2), np.float64(13.22), np.float64(41.33)]
+      silver-gray #C3C6C9: 19 pieces; smallest 1.96 mm^2 at (823, 435, 19, 19); next [np.float64(7.35), np.float64(10.62), np.float64(10.62)]
+    pieces under 1.0 mm^2 (would be fussy to stitch): 0
+    forest green #166A35: area narrower than 0.8 mm = 0.7% (sharp corners / tapered ends only; see QC map)
+    silver-gray #C3C6C9: area narrower than 0.8 mm = 0.5% (sharp corners / tapered ends only; see QC map)
+    lettering size at 3.5 in wide: WINDOW CO. cap height = 4.6 mm (~0.18 in); stroke ~1.3 mm; PAV’S cap height = 14.8 mm
+
+[7] SOCIAL ICON LEGIBILITY
+    rendered Pavs_Window_Co_Social_Icon_128px.png
+    rendered Pavs_Window_Co_Social_Icon_256px.png
+    rendered Pavs_Window_Co_Social_Icon_48px.png
+    rendered Pavs_Window_Co_Social_Icon_512px.png
+    rendered Pavs_Window_Co_Social_Icon_64px.png
+    WCAG contrast ratios (>=3:1 is the usual minimum for graphics):
+      icon green #1E8B46 on #0A0C0B: 4.52 | silver #C3C6C9 on #0A0C0B: 11.44 | icon green on white: 4.34
+      flat logo forest green #166A35 on its black plate: 3.15 | silver on black: 12.24
+
+[8] EDGE QUALITY (path geometry)
+    01_Premium_Vector/Pavs_Window_Co_Premium.svg: 1493 segments, shortest 0.6 units, 8 micro-segments (<0.8 units)
+    02_Simplified_Decal_Sign_Uniform/Pavs_Window_Co_Simplified.svg: 683 segments, shortest 0.6 units, 8 micro-segments (<0.8 units)
+    03_Embroidery_Artwork/Pavs_Window_Co_Embroidery_NoSlogan.svg: 327 segments, shortest 5.0 units, 0 micro-segments (<0.8 units)
+    04_Social_Media/Pavs_Window_Co_Social_Icon.svg: 43 segments, shortest 22.8 units, 0 micro-segments (<0.8 units)
+    04_Social_Media/Pavs_Window_Co_Social_Icon_Transparent.svg: 63 segments, shortest 22.8 units, 0 micro-segments (<0.8 units)
