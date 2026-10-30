@@ -1,0 +1,8 @@
+.env
+*.db
+*.db-journal
+STOP
+__pycache__/
+.venv/
+.pytest_cache/
+*.log
