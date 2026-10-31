@@ -1,4 +1,5 @@
 import { QuoteForm } from "./QuoteForm";
+import { Logo } from "./Logo";
 import { IconCheck, IconPhone } from "./Icons";
 import { PHONE } from "../content";
 
@@ -8,9 +9,10 @@ export function Hero() {
       <div className="hero__glass" aria-hidden="true" />
       <div className="wrap hero__grid">
         <div className="hero__copy">
+          <Logo large />
           <p className="eyebrow">Broome County, NY</p>
           <h1 className="silver">
-            Crystal-clear windows for <span className="emerald">homes &amp; storefronts.</span>
+            Crystal-clear windows for <span className="green">homes &amp; storefronts.</span>
           </h1>
           <p className="hero__lede">
             Pav's Window Co. is a locally owned window cleaning company serving Binghamton, Vestal, Endicott,

@@ -1,22 +1,23 @@
-/* Layout concept: polished glass at night. A deep green-black ground, brushed-silver
-   type and hairlines, emerald reserved for the brand mark and the actions that matter.
-   No illustrations: depth comes from light, reflections and fine window-frame lines. */
+/* Layout concept: built around the Pav's Window Co. badge. Deep black ground, chrome-silver
+   type and hairlines, the logo's bright green reserved for the actions that matter.
+   Depth comes from light, reflections and fine window-frame lines. */
 :root {
-  --bg: #070b09;
-  --bg-alt: #0b110e;
+  --bg: #060706;
+  --bg-alt: #0c0e0c;
   --panel-top: rgba(255, 255, 255, 0.05);
   --panel-bottom: rgba(255, 255, 255, 0.018);
-  --line: rgba(214, 226, 221, 0.11);
-  --line-strong: rgba(214, 226, 221, 0.22);
-  --text: #e8eeeb;
-  --text-soft: #b2bfb9;
-  --text-mute: #84928c;
-  --silver: #cfd7da;
-  --emerald: #14a870;
-  --emerald-bright: #3ddc97;
-  --emerald-deep: #0b6e4a;
+  --line: rgba(225, 228, 225, 0.11);
+  --line-strong: rgba(225, 228, 225, 0.22);
+  --text: #ececec;
+  --text-soft: #b9bdb9;
+  --text-mute: #8b908b;
+  --silver: #d6d8d6;
+  --green: #24c94a;
+  --green-bright: #4be36b;
+  --green-deep: #0a7a28;
+  --glass-blue: #6cc3f2;
 
-  --font-display: "Manrope", "Inter Display", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Saira", "Inter Display", ui-sans-serif, system-ui, sans-serif;
   --font-body: "Figtree", "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
 
   --radius: 14px;
@@ -67,8 +68,9 @@ h3 {
   margin: 0;
   font-family: var(--font-display);
   font-weight: 800;
+  font-stretch: 112%;
   line-height: 1.08;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.012em;
   color: #fff;
   text-wrap: balance;
 }
@@ -104,8 +106,8 @@ p {
   z-index: 100;
   padding: 0.6rem 1rem;
   border-radius: 10px;
-  background: var(--emerald);
-  color: #fff;
+  background: var(--green);
+  color: #041207;
   font-weight: 700;
   text-decoration: none;
 }
@@ -114,19 +116,19 @@ p {
 }
 
 :where(a, button, summary, input, select, textarea):focus-visible {
-  outline: 2px solid var(--emerald-bright);
+  outline: 2px solid var(--green-bright);
   outline-offset: 3px;
 }
 
 /* Brushed metal and gem tones for type */
 .silver {
-  background: linear-gradient(176deg, #ffffff 0%, #e6ebed 40%, #bcc7cc 78%, #e3e8ea 100%);
+  background: linear-gradient(178deg, #ffffff 0%, #f1f1f1 42%, #b9bcb9 72%, #ececec 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
-.emerald {
-  background: linear-gradient(135deg, #6ff0b8 0%, #22c184 45%, #109a66 100%);
+.green {
+  background: linear-gradient(178deg, #8cff9f 0%, #3fdc5f 45%, #17a83a 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -154,13 +156,13 @@ p {
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--emerald-bright);
+  color: var(--green-bright);
 }
 .eyebrow::before {
   content: "";
   width: 22px;
   height: 1px;
-  background: linear-gradient(90deg, var(--emerald-bright), transparent);
+  background: linear-gradient(90deg, var(--green-bright), transparent);
 }
 
 .lead {
@@ -183,10 +185,10 @@ p {
   flex: none;
   width: 46px;
   height: 46px;
-  border: 1px solid rgba(61, 220, 151, 0.28);
+  border: 1px solid rgba(75, 227, 107, 0.28);
   border-radius: 12px;
-  background: radial-gradient(circle at 30% 20%, rgba(61, 220, 151, 0.22), rgba(20, 168, 112, 0.06) 70%);
-  color: var(--emerald-bright);
+  background: radial-gradient(circle at 30% 20%, rgba(75, 227, 107, 0.22), rgba(36, 201, 74, 0.06) 70%);
+  color: var(--green-bright);
 }
 .badge-icon svg {
   width: 21px;
@@ -226,10 +228,10 @@ p {
   font-size: 1.04rem;
 }
 .btn--primary {
-  border-color: rgba(255, 255, 255, 0.14);
-  background: linear-gradient(180deg, #1dbb7f 0%, #0f9363 100%);
-  color: #fff;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 10px 26px -12px rgba(20, 168, 112, 0.85);
+  border-color: rgba(255, 255, 255, 0.22);
+  background: linear-gradient(180deg, #4be36b 0%, #1fb342 55%, #12932f 100%);
+  color: #041207;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 10px 26px -12px rgba(36, 201, 74, 0.85);
 }
 .btn--primary:hover {
   filter: brightness(1.08);
@@ -244,18 +246,18 @@ p {
   color: var(--text);
 }
 .btn--ghost:hover {
-  border-color: rgba(214, 226, 221, 0.45);
+  border-color: rgba(225, 228, 225, 0.45);
   background: rgba(255, 255, 255, 0.06);
 }
 .btn--ghost svg {
-  color: var(--emerald-bright);
+  color: var(--green-bright);
 }
 
 /* Top bar and header */
 .topbar {
   display: none;
   border-bottom: 1px solid var(--line);
-  background: #050806;
+  background: #040504;
   color: var(--text-mute);
   font-size: 0.84rem;
 }
@@ -284,7 +286,7 @@ p {
 .topbar__item svg {
   width: 15px;
   height: 15px;
-  color: var(--emerald-bright);
+  color: var(--green-bright);
 }
 .topbar__phone {
   color: var(--silver);
@@ -306,7 +308,7 @@ p {
   z-index: 50;
   padding-top: env(safe-area-inset-top, 0px);
   border-bottom: 1px solid transparent;
-  background: rgba(7, 11, 9, 0.82);
+  background: rgba(6, 7, 6, 0.84);
   -webkit-backdrop-filter: saturate(1.3) blur(14px);
   backdrop-filter: saturate(1.3) blur(14px);
   transition: border-color 0.2s, box-shadow 0.2s;
@@ -365,7 +367,7 @@ p {
 .header__phone svg {
   width: 17px;
   height: 17px;
-  color: var(--emerald-bright);
+  color: var(--green-bright);
 }
 @media (min-width: 820px) {
   .header__phone {
@@ -423,6 +425,33 @@ p {
 }
 
 /* Logo */
+.logo-img {
+  display: block;
+  width: 112px;
+  height: auto;
+}
+@media (min-width: 720px) {
+  .logo-img {
+    width: 132px;
+  }
+}
+.header__logo {
+  transition: opacity 0.25s, transform 0.25s, visibility 0.25s;
+}
+/* At the top of the page the big hero logo shows; the header logo slides in once you scroll. */
+.header:not(.is-scrolled) .header__logo {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+}
+.footer__logo .logo-img {
+  width: 220px;
+}
+.logo-img--hero {
+  width: min(460px, 100%);
+  margin: 0 0 1.4rem -0.4rem;
+  filter: drop-shadow(0 18px 40px rgba(36, 201, 74, 0.18));
+}
 .logo {
   display: inline-flex;
   align-items: center;
@@ -452,7 +481,7 @@ p {
   font-weight: 700;
   letter-spacing: 0.34em;
   text-transform: uppercase;
-  color: var(--emerald-bright);
+  color: var(--green-bright);
 }
 
 /* Hero */
@@ -461,8 +490,8 @@ p {
   overflow: hidden;
   padding-block: 2.5rem 4rem;
   background:
-    radial-gradient(42rem 26rem at 12% 0%, rgba(20, 168, 112, 0.2), transparent 70%),
-    radial-gradient(40rem 30rem at 92% 40%, rgba(20, 168, 112, 0.12), transparent 70%),
+    radial-gradient(42rem 26rem at 12% 0%, rgba(36, 201, 74, 0.2), transparent 70%),
+    radial-gradient(40rem 30rem at 92% 40%, rgba(36, 201, 74, 0.12), transparent 70%),
     var(--bg);
 }
 @media (min-width: 1024px) {
@@ -477,7 +506,7 @@ p {
   right: -4rem;
   width: min(46rem, 80vw);
   aspect-ratio: 1;
-  border: 1px solid rgba(214, 226, 221, 0.08);
+  border: 1px solid rgba(225, 228, 225, 0.08);
   border-radius: 36px;
   pointer-events: none;
   background:
@@ -488,7 +517,7 @@ p {
 .hero__glass::after {
   content: "";
   position: absolute;
-  background: rgba(214, 226, 221, 0.08);
+  background: rgba(225, 228, 225, 0.08);
 }
 .hero__glass::before {
   top: 0;
@@ -519,9 +548,9 @@ p {
 }
 .hero h1 {
   margin-top: 1.1rem;
-  font-size: clamp(2.35rem, 1.45rem + 3.4vw, 3.9rem);
-  letter-spacing: -0.035em;
-  line-height: 1.04;
+  font-size: clamp(2.1rem, 1.35rem + 2.9vw, 3.4rem);
+  letter-spacing: -0.015em;
+  line-height: 1.06;
 }
 .hero__lede {
   margin-top: 1.35rem;
@@ -549,8 +578,8 @@ p {
   height: 20px;
   padding: 3px;
   border-radius: 50%;
-  background: rgba(61, 220, 151, 0.14);
-  color: var(--emerald-bright);
+  background: rgba(75, 227, 107, 0.14);
+  color: var(--green-bright);
   stroke-width: 3;
 }
 .hero__call {
@@ -574,8 +603,8 @@ p {
   width: 44px;
   height: 44px;
   border-radius: 12px;
-  background: linear-gradient(180deg, #1dbb7f, #0f9363);
-  color: #fff;
+  background: linear-gradient(180deg, #4be36b, #12932f);
+  color: #041207;
 }
 .hero__call-icon svg {
   width: 19px;
@@ -599,7 +628,7 @@ p {
   position: relative;
   min-width: 0;
   padding: 1.5rem;
-  background: linear-gradient(180deg, rgba(20, 30, 25, 0.88), rgba(10, 16, 13, 0.92));
+  background: linear-gradient(180deg, rgba(24, 27, 24, 0.9), rgba(10, 12, 10, 0.94));
   -webkit-backdrop-filter: blur(16px);
   backdrop-filter: blur(16px);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 40px 80px -40px rgba(0, 0, 0, 0.9);
@@ -610,7 +639,7 @@ p {
   inset: -1px;
   border-radius: inherit;
   padding: 1px;
-  background: linear-gradient(160deg, rgba(255, 255, 255, 0.35), rgba(61, 220, 151, 0.25) 35%, transparent 60%);
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.35), rgba(75, 227, 107, 0.25) 35%, transparent 60%);
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
@@ -672,7 +701,7 @@ p {
   flex: none;
   width: 24px;
   height: 24px;
-  color: var(--emerald-bright);
+  color: var(--green-bright);
   stroke-width: 1.7;
 }
 .trust__list strong {
@@ -721,7 +750,7 @@ p {
   width: 19px;
   height: 19px;
   margin-top: 0.2rem;
-  color: var(--emerald-bright);
+  color: var(--green-bright);
   stroke-width: 2.6;
 }
 
@@ -873,9 +902,9 @@ p {
   gap: 1rem;
   margin-top: 1.5rem;
   padding: 1.5rem;
-  border: 1px solid rgba(61, 220, 151, 0.25);
+  border: 1px solid rgba(75, 227, 107, 0.25);
   border-radius: var(--radius-lg);
-  background: linear-gradient(120deg, rgba(20, 168, 112, 0.16), rgba(20, 168, 112, 0.04) 60%);
+  background: linear-gradient(120deg, rgba(36, 201, 74, 0.16), rgba(36, 201, 74, 0.04) 60%);
 }
 @media (min-width: 1000px) {
   .included {
@@ -918,7 +947,7 @@ p {
   width: 19px;
   height: 19px;
   margin-top: 0.15rem;
-  color: var(--emerald-bright);
+  color: var(--green-bright);
 }
 
 /* How it works */
@@ -957,7 +986,7 @@ p {
   font-weight: 800;
   line-height: 1;
   letter-spacing: -0.02em;
-  background: linear-gradient(176deg, #ffffff, #a6b2b8 70%, #eef2f3);
+  background: linear-gradient(178deg, #ffffff, #b9bcb9 70%, #ececec);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -1010,9 +1039,10 @@ p {
   border-top: 1px solid var(--line);
 }
 .owner-note__mark {
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   flex: none;
+  border-radius: 10px;
 }
 .owner-note__name {
   display: block;
@@ -1054,7 +1084,7 @@ p {
   position: relative;
   overflow: hidden;
   background:
-    radial-gradient(50rem 24rem at 100% 100%, rgba(20, 168, 112, 0.16), transparent 70%),
+    radial-gradient(50rem 24rem at 100% 100%, rgba(36, 201, 74, 0.16), transparent 70%),
     var(--bg);
 }
 .area__inner {
@@ -1086,8 +1116,8 @@ p {
   height: 0.16em;
   margin-inline: 0.42em;
   border-radius: 50%;
-  background: var(--emerald-bright);
-  box-shadow: 0 0 14px rgba(61, 220, 151, 0.8);
+  background: var(--green-bright);
+  box-shadow: 0 0 14px rgba(75, 227, 107, 0.8);
 }
 .area__more {
   color: var(--text-mute);
@@ -1108,7 +1138,7 @@ p {
 .area__foot svg {
   width: 17px;
   height: 17px;
-  color: var(--emerald-bright);
+  color: var(--green-bright);
 }
 
 /* FAQ */
@@ -1169,7 +1199,7 @@ p {
   height: 30px;
   border: 1px solid var(--line-strong);
   border-radius: 50%;
-  color: var(--emerald-bright);
+  color: var(--green-bright);
   transition: transform 0.2s;
 }
 .qa__icon svg {
@@ -1188,7 +1218,7 @@ p {
 /* Quote */
 .quote {
   background:
-    radial-gradient(46rem 26rem at 0% 0%, rgba(20, 168, 112, 0.14), transparent 70%),
+    radial-gradient(46rem 26rem at 0% 0%, rgba(36, 201, 74, 0.14), transparent 70%),
     var(--bg);
 }
 .quote__grid {
@@ -1309,22 +1339,22 @@ textarea.input {
 select.input {
   appearance: none;
   padding-right: 2.5rem;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23b2bfb9' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23b9bdb9' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 0.8rem center;
 }
 select.input option {
-  background: #0f1714;
+  background: #121412;
   color: #fff;
 }
 .input::placeholder {
-  color: #6c7a74;
+  color: #727772;
 }
 .input:focus {
   outline: none;
-  border-color: var(--emerald-bright);
+  border-color: var(--green-bright);
   background: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 0 0 4px rgba(61, 220, 151, 0.15);
+  box-shadow: 0 0 0 4px rgba(75, 227, 107, 0.15);
 }
 .seg {
   display: flex;
@@ -1358,16 +1388,16 @@ select.input option {
   transition: background-color 0.15s, border-color 0.15s, color 0.15s;
 }
 .seg label:hover span {
-  border-color: rgba(214, 226, 221, 0.45);
+  border-color: rgba(225, 228, 225, 0.45);
   color: #fff;
 }
 .seg input:checked + span {
-  border-color: rgba(61, 220, 151, 0.7);
-  background: rgba(20, 168, 112, 0.22);
+  border-color: rgba(75, 227, 107, 0.7);
+  background: rgba(36, 201, 74, 0.22);
   color: #fff;
 }
 .seg input:focus-visible + span {
-  outline: 2px solid var(--emerald-bright);
+  outline: 2px solid var(--green-bright);
   outline-offset: 2px;
 }
 .form__submit {
@@ -1403,10 +1433,10 @@ select.input option {
   place-items: center;
   width: 64px;
   height: 64px;
-  border: 1px solid rgba(61, 220, 151, 0.4);
+  border: 1px solid rgba(75, 227, 107, 0.4);
   border-radius: 50%;
-  background: rgba(20, 168, 112, 0.16);
-  color: var(--emerald-bright);
+  background: rgba(36, 201, 74, 0.16);
+  color: var(--green-bright);
 }
 .form-success__icon svg {
   width: 32px;
@@ -1428,7 +1458,7 @@ select.input option {
 .footer {
   padding-block: 3.5rem 2rem;
   border-top: 1px solid var(--line);
-  background: #050806;
+  background: #040504;
   color: var(--text-mute);
   font-size: 0.97rem;
 }
@@ -1509,7 +1539,7 @@ select.input option {
   padding: 0.65rem max(14px, env(safe-area-inset-right, 0px)) calc(0.65rem + env(safe-area-inset-bottom, 0px))
     max(14px, env(safe-area-inset-left, 0px));
   border-top: 1px solid var(--line);
-  background: rgba(7, 11, 9, 0.9);
+  background: rgba(6, 7, 6, 0.9);
   -webkit-backdrop-filter: blur(14px);
   backdrop-filter: blur(14px);
 }

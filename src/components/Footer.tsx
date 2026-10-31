@@ -9,7 +9,7 @@ export function Footer() {
       <div className="wrap">
         <div className="footer__grid">
           <div className="footer__brand">
-            <Logo />
+            <Logo className="footer__logo" />
             <p>Window cleaning for homes and storefronts in Broome County, NY.</p>
             <p className="footer__owner">Owned and operated by {BUSINESS.owner}.</p>
           </div>

@@ -1,4 +1,3 @@
-import { LogoMark } from "./Logo";
 import { IconShield, IconTag, IconUsers, IconWindow } from "./Icons";
 
 const REASONS = [
@@ -40,7 +39,7 @@ export function WhyUs() {
               </p>
             </blockquote>
             <figcaption className="owner-note__sig">
-              <LogoMark className="owner-note__mark" />
+              <img className="owner-note__mark" src="images/house-icon.png" width={64} height={64} alt="" />
               <span>
                 <span className="owner-note__name">Michael Pavlisak</span>
                 <span className="owner-note__role">Owner, Pav's Window Co.</span>

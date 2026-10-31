@@ -45,7 +45,7 @@ export function Header() {
 
       <header className={scrolled || open ? "header is-scrolled" : "header"}>
         <div className="wrap header__inner">
-          <Logo />
+          <Logo className="header__logo" />
 
           <nav className="nav" aria-label="Main">
             {NAV.map((l) => (
