@@ -473,6 +473,13 @@ figure {
   font-size: clamp(2.2rem, 1.4rem + 3vw, 3.5rem);
   line-height: 1.05;
 }
+.hero__kicker {
+  display: block;
+  margin-bottom: 1.1rem;
+  font-family: var(--font-body);
+  font-stretch: 100%;
+  line-height: 1.5;
+}
 .hero__lede {
   max-width: 34rem;
   font-size: clamp(1.05rem, 1rem + 0.3vw, 1.18rem);
@@ -971,6 +978,11 @@ figure {
 }
 .area__more {
   color: #9aa09a;
+}
+.area__also {
+  margin-top: 0.4rem;
+  max-width: 40rem;
+  font-size: 1rem;
 }
 .area__foot {
   margin-top: 1.1rem;

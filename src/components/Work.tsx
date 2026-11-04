@@ -38,11 +38,11 @@ export function Work() {
             <figure className="pair" key={p.caption}>
               <div className="pair__imgs">
                 <div className="pair__side">
-                  <img src={p.before} width={p.w} height={p.h} loading="lazy" alt={`Before: ${p.alt}, dirty and streaked`} />
+                  <img src={p.before} width={p.w} height={p.h} loading="lazy" alt={`Before window cleaning: ${p.alt}, dirty and streaked`} />
                   <span className="tag">Before</span>
                 </div>
                 <div className="pair__side">
-                  <img src={p.after} width={p.w} height={p.h} loading="lazy" alt={`After: ${p.alt}, clean and clear`} />
+                  <img src={p.after} width={p.w} height={p.h} loading="lazy" alt={`After window cleaning by Pav's Window Co.: ${p.alt}, streak-free`} />
                   <span className="tag tag--after">After</span>
                 </div>
               </div>
@@ -54,7 +54,7 @@ export function Work() {
         <div className="work__photos">
           {PHOTOS.map((p) => (
             <figure className={p.wide ? "shot shot--wide" : "shot"} key={p.src}>
-              <img src={p.src} width={p.w} height={p.h} loading="lazy" alt={p.caption} />
+              <img src={p.src} width={p.w} height={p.h} loading="lazy" alt={`Commercial window cleaning by Pav's Window Co.: ${p.caption}, NY`} />
               <figcaption>{p.caption}</figcaption>
             </figure>
           ))}

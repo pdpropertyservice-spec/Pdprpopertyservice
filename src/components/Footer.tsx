@@ -56,7 +56,7 @@ export function Footer() {
         </div>
 
         <div className="footer__bottom">
-          <p>© {new Date().getFullYear()} Pav's Window Co. All rights reserved.</p>
+          <p suppressHydrationWarning>© {new Date().getFullYear()} Pav's Window Co. All rights reserved.</p>
           <p>Locally owned and operated in Broome County, NY.</p>
         </div>
       </div>

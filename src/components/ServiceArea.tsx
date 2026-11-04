@@ -6,13 +6,16 @@ export function ServiceArea() {
     <section className="section area" id="area">
       <div className="wrap area__inner">
         <p className="eyebrow">Service area</p>
-        <h2 className="silver">Proudly serving Broome County, NY</h2>
+        <h2 className="silver">Window cleaning across Broome County, NY</h2>
         <ul className="area__towns">
           {BUSINESS.towns.map((t) => (
             <li key={t}>{t}</li>
           ))}
           <li className="area__more">&amp; nearby towns</li>
         </ul>
+        <p className="area__also">
+          Also Endwell, Kirkwood, Conklin, Port Dickinson, Chenango Bridge and the rest of Broome County.
+        </p>
         <p className="area__foot">
           Not sure if you're in range? Call or text{" "}
           <a href={PHONE.href}>

@@ -6,8 +6,8 @@ export function Hero() {
     <section className="hero" id="top">
       <div className="wrap hero__grid">
         <div className="hero__copy">
-          <p className="eyebrow">Window cleaning · Broome County, NY</p>
           <h1>
+            <span className="eyebrow hero__kicker">Window cleaning in Binghamton &amp; Broome County, NY</span>
             Crystal-clear windows for <span className="accent-text">homes &amp; businesses.</span>
           </h1>
           <p className="hero__lede">
@@ -42,7 +42,7 @@ export function Hero() {
             sizes="(min-width: 1024px) 560px, 92vw"
             width={1400}
             height={1050}
-            alt="Mike Pavlisak cleaning tall showroom windows with a water-fed pole"
+            alt="Mike Pavlisak of Pav's Window Co. cleaning showroom windows at a car dealership in Endicott, NY"
             fetchPriority="high"
           />
           <figcaption>Showroom glass at a dealership in Endicott</figcaption>

@@ -4,7 +4,7 @@ import { BUSINESS, PHONE } from "../content";
 const FAQS = [
   {
     q: "What areas do you serve?",
-    a: "We serve Binghamton, Vestal, Endicott, Johnson City, and nearby towns across Broome County, NY. Not sure if you're in range? Call or text and we'll let you know.",
+    a: "We serve Binghamton, Vestal, Endicott, Johnson City, Endwell, Kirkwood, Conklin and nearby towns across Broome County, NY. Not sure if you're in range? Call or text and we'll let you know.",
   },
   {
     q: "How much does window cleaning cost?",

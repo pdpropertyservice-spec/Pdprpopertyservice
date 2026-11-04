@@ -39,7 +39,7 @@ export function WhyUs() {
               </p>
             </blockquote>
             <figcaption className="owner-note__sig">
-              <img className="owner-note__mark" src="images/work/mike.webp" width={240} height={240} alt="Mike Pavlisak" />
+              <img className="owner-note__mark" src="images/work/mike.webp" width={240} height={240} alt="Mike Pavlisak, owner of Pav's Window Co." />
               <span>
                 <span className="owner-note__name">Mike Pavlisak</span>
                 <span className="owner-note__role">Owner, Pav's Window Co.</span>

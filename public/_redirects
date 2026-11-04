@@ -1,0 +1,5 @@
+# Send the old domain to the new one, so Google moves its history over to pavswindowco.com
+https://pdpropertyservice.com/*      https://www.pavswindowco.com/:splat  301!
+https://www.pdpropertyservice.com/*  https://www.pavswindowco.com/:splat  301!
+http://pdpropertyservice.com/*       https://www.pavswindowco.com/:splat  301!
+http://www.pdpropertyservice.com/*   https://www.pavswindowco.com/:splat  301!
