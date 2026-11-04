@@ -1,4 +1,8 @@
 // Business details used across the site. Change them here and every section updates.
+
+/** The site's look: "light" (white) or "dark" (black). */
+export const SITE_THEME: "light" | "dark" = "light";
+
 export const BUSINESS = {
   name: "Pav's Window Co.",
   owner: "Michael Pavlisak",
@@ -12,8 +16,8 @@ export const PHONE = BUSINESS.phone;
 
 export const NAV = [
   { label: "Services", href: "#services" },
+  { label: "Our work", href: "#work" },
   { label: "How it works", href: "#process" },
   { label: "Why Pav's", href: "#why" },
-  { label: "Service area", href: "#area" },
   { label: "FAQ", href: "#faq" },
 ];

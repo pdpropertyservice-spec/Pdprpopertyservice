@@ -4,7 +4,7 @@ const REASONS = [
   {
     icon: IconUsers,
     title: "Owner on every job",
-    desc: "You deal with Michael from your first call to the final wipe-down.",
+    desc: "You deal with Mike from your first call to the final wipe-down.",
   },
   {
     icon: IconWindow,
@@ -25,7 +25,7 @@ const REASONS = [
 
 export function WhyUs() {
   return (
-    <section className="section" id="why">
+    <section className="section section--alt" id="why">
       <div className="wrap why">
         <div className="why__intro">
           <p className="eyebrow">Why Pav's</p>
@@ -34,14 +34,14 @@ export function WhyUs() {
           <figure className="owner-note panel">
             <blockquote>
               <p>
-                "I'm Michael Pavlisak, and I own and run Pav's Window Co. I'm on every job myself, so you get
+                "I'm Mike Pavlisak, and I own and run Pav's Window Co. I'm on every job myself, so you get
                 someone who cares about the result, not a faceless franchise."
               </p>
             </blockquote>
             <figcaption className="owner-note__sig">
-              <img className="owner-note__mark" src="images/house-icon.png" width={64} height={64} alt="" />
+              <img className="owner-note__mark" src="images/work/mike.webp" width={240} height={240} alt="Mike Pavlisak" />
               <span>
-                <span className="owner-note__name">Michael Pavlisak</span>
+                <span className="owner-note__name">Mike Pavlisak</span>
                 <span className="owner-note__role">Owner, Pav's Window Co.</span>
               </span>
             </figcaption>

@@ -15,7 +15,7 @@ const STEPS = [
 
 export function Process() {
   return (
-    <section className="section section--alt" id="process">
+    <section className="section" id="process">
       <div className="wrap">
         <header className="section-head">
           <p className="eyebrow">How it works</p>

@@ -19,7 +19,7 @@ export function QuoteSection() {
                 <IconPhone />
               </span>
               <span>
-                <span className="contact-list__label">Call or text Michael</span>
+                <span className="contact-list__label">Call or text Mike</span>
                 <a href={PHONE.href}>{PHONE.display}</a>
               </span>
             </li>

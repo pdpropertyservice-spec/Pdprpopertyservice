@@ -8,7 +8,7 @@ const FAQS = [
   },
   {
     q: "How much does window cleaning cost?",
-    a: "It depends on how many windows you have, whether you want outside only or inside and outside, and how easy they are to reach. Send a quick request and you'll get a free, flat-rate quote, usually within 24 hours.",
+    a: "Storefronts on a regular schedule start at $50 a visit. Homes and larger jobs depend on how many windows you have, inside or outside, and how easy they are to reach. Send a quick request and you'll get a free, flat-rate quote, usually within 24 hours.",
   },
   {
     q: "Do you clean inside and outside?",
@@ -28,13 +28,13 @@ const FAQS = [
   },
   {
     q: "How do I book?",
-    a: `Call or text Michael at ${PHONE.display}, email ${BUSINESS.email}, or use the quote form on this page.`,
+    a: `Call or text Mike at ${PHONE.display}, email ${BUSINESS.email}, or use the quote form on this page.`,
   },
 ];
 
 export function FAQ() {
   return (
-    <section className="section section--alt" id="faq">
+    <section className="section" id="faq">
       <div className="wrap faq">
         <div className="faq__intro">
           <p className="eyebrow">Questions</p>

@@ -2,6 +2,7 @@ import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
 import { TrustBar } from "./components/TrustBar";
 import { Services } from "./components/Services";
+import { Work } from "./components/Work";
 import { Process } from "./components/Process";
 import { WhyUs } from "./components/WhyUs";
 import { ServiceArea } from "./components/ServiceArea";
@@ -21,6 +22,7 @@ export default function App() {
         <Hero />
         <TrustBar />
         <Services />
+        <Work />
         <Process />
         <WhyUs />
         <ServiceArea />

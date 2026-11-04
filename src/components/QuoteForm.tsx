@@ -103,7 +103,7 @@ export function QuoteForm({ compact = false, idPrefix }: { compact?: boolean; id
         </span>
         <h3>Thanks, {form.name.split(" ")[0] || "neighbor"}. Your request is in.</h3>
         <p>
-          Michael will get back to you within 24 hours. Need us sooner? Call or text{" "}
+          Mike will get back to you within 24 hours. Need us sooner? Call or text{" "}
           <a href={PHONE.href}>{PHONE.display}</a>.
         </p>
         <button

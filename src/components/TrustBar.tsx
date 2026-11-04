@@ -1,10 +1,10 @@
-import { IconClock, IconShield, IconUsers, IconWindow } from "./Icons";
+import { IconClock, IconPin, IconShield, IconUsers } from "./Icons";
 
 const ITEMS = [
   { icon: IconClock, title: "Quotes in 24 hours", desc: "Free and no obligation" },
   { icon: IconShield, title: "Satisfaction guarantee", desc: "We re-clean any spot free" },
-  { icon: IconUsers, title: "Owner-operated", desc: "Michael is on every job" },
-  { icon: IconWindow, title: "Windows only", desc: "Homes and storefronts" },
+  { icon: IconUsers, title: "Owner on every job", desc: "You deal with Mike directly" },
+  { icon: IconPin, title: "Locally owned", desc: "Serving Broome County, NY" },
 ];
 
 export function TrustBar() {
