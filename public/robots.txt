@@ -1,4 +1,26 @@
+# Search engines (Google, Bing, Apple, DuckDuckGo) and link previews are welcome.
 User-agent: *
 Allow: /
+
+# Bots that only scrape for SEO tools or AI training. They bring no customers
+# and use up the site's free bandwidth.
+User-agent: AhrefsBot
+User-agent: SemrushBot
+User-agent: MJ12bot
+User-agent: DotBot
+User-agent: BLEXBot
+User-agent: DataForSeoBot
+User-agent: Barkrowler
+User-agent: PetalBot
+User-agent: Bytespider
+User-agent: CCBot
+User-agent: GPTBot
+User-agent: ClaudeBot
+User-agent: anthropic-ai
+User-agent: Meta-ExternalAgent
+User-agent: Amazonbot
+User-agent: ImagesiftBot
+User-agent: Timpibot
+Disallow: /
 
 Sitemap: https://www.pavswindowco.com/sitemap.xml

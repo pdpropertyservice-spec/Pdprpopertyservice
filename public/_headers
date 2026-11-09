@@ -1,0 +1,12 @@
+# Let browsers keep images and icons for 30 days, so repeat visitors don't download them again.
+# (If an image is ever replaced, give the new file a new name.)
+/images/*
+  Cache-Control: public, max-age=2592000
+/og-image.*
+  Cache-Control: public, max-age=2592000
+/favicon-*
+  Cache-Control: public, max-age=2592000
+/apple-touch-icon.png
+  Cache-Control: public, max-age=2592000
+/icon-512.png
+  Cache-Control: public, max-age=2592000
